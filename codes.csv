@@ -1,0 +1,824 @@
+list name	name	label	cf	code	color
+Consent	1	Yes			
+Consent	2	No			
+emailconsent	1	Yes			
+emailconsent	2	No			
+yesno	1	Yes			
+yesno	2	No			
+yesnodk	1	Yes			
+yesnodk	2	No			
+yesnodk	99	Don't know			
+testvalid	1	Valid			
+testvalid	2	Test			
+gender	1	Male		1.0	Blue
+gender	2	Female		0.0	Pink
+region	somaliland	Somaliland			yellow
+region	jubaland	Jubaland			blue
+region	puntland	Puntland			red
+region	southcentral	Southcentral			green
+district	lascanood	Laascaanod	somaliland		
+district	buhodle	Buhoodle	somaliland		
+district	elafwayn	Ceel-afwayn	somaliland		
+district	zaylac	Zaylac	somaliland		
+district	berbera	Berbera	somaliland		
+district	burao	Burao	somaliland		
+district	galkayo	Galkayo	puntland		
+district	lascanood2	Laascaanod	puntland		
+district	badhan	Badhan	puntland		
+district	bossaso	Bossaso	puntland		
+district	garowe	Garowe	puntland		
+district	luuq	Luuq	jubaland		
+district	beledxawa	Beled-Xawa	jubaland		
+district	dhobley	Dhobley	jubaland		
+district	kismayo	Kismayo	jubaland		
+district	dollow	Dollow	jubaland		
+district	guricel	Guricel	southcentral		
+district	baidoa	Baidoa	southcentral		
+district	mogadishuipdsites	Mogadishu (IDP sites)	southcentral		
+district	xudur	Xudur	southcentral		
+district	adado	Adado	southcentral		
+district	beledweyne	Beledweyne	southcentral		
+district	jowhar	Jowhar	southcentral		
+district	baraawe	Baraawe	southcentral		
+district	hobyo	Hobyo	southcentral		
+targetlocation	caashocado	Caashocaddo	zaylac		
+targetlocation	ceelgaad	Ceelgaal	zaylac		
+targetlocation	xariirrad	Xariirad	zaylac		
+targetlocation	18my	18(May)	burao		
+targetlocation	allaaminidp	Alla Amin IDP	burao		
+targetlocation	guryasamoidp	Guryasamo IDP	burao		
+targetlocation	xayiridp	Xayir IDP	burao		
+targetlocation	mandhera	Mandheera	berbera		
+targetlocation	idpsinsideberbera	IDPs inside Berbera	berbera		
+targetlocation	gumays	Gumays	lascanood		
+targetlocation	adhicadeeye	Adhicadeeye	lascanood		
+targetlocation	idpsinsidelascanod	IDPs inside Lascanod	lascanood		
+targetlocation	idp1	IDP1	buhodle		
+targetlocation	idp2	IDP2	buhodle		
+targetlocation	hostcomm	Host community	buhodle		
+targetlocation	dararwayne	Dararwayne	elafwayn		
+targetlocation	fadhigab	Fadhigaab	elafwayn		
+targetlocation	garadag	Gar-adag	elafwayn		
+targetlocation	laanle	Laanle	guricel		
+targetlocation	hodale	Hodale	guricel		
+targetlocation	ceelqorax	Ceel-Qorax	guricel		
+targetlocation	balihood	Balihood	guricel		
+targetlocation	davare	Dabare	guricel		
+targetlocation	guricelidps	Inside IDPs in the town - Guriceel	guricel		
+targetlocation	dayliine	Dayliine-IDPs	mogadishuipdsites		
+targetlocation	kaxda	Kaxda-IDPs	mogadishuipdsites		
+targetlocation	grasbareey	Garasbaarey-IDPs	mogadishuipdsites		
+targetlocation	howlwadag	Howlwadag-Host	baidoa		
+targetlocation	horseed1	Horseed-Host	baidoa		
+targetlocation	wadajir	Wadajir-Host	baidoa		
+targetlocation	isha	Isha-Host	baidoa		
+targetlocation	berdale	Berdale-Host	baidoa		
+targetlocation	hanano	Hanano2, & Barwaqo IDPs 	baidoa		
+targetlocation	towfiiq	Towfiiq IDPs areas	baidoa		
+targetlocation	suuqa	 Suuqa xoolaha IDPs 	baidoa		
+targetlocation	adcidps	ADC IDPs 	baidoa		
+targetlocation	hawlwadagidps	Howlwadag IDPs 	baidoa		
+targetlocation	aliamxaar	Ali-amxaar/ Boodaan IDPs 	baidoa		
+targetlocation	biyagadud	Biya-Gadud	adado		
+targetlocation	docoleey	Docoleey	adado		
+targetlocation	habasley	Habasley	adado		
+targetlocation	lidoole	Iidoole	adado		
+targetlocation	adadpidps	Inside IDPs in the town - Adaado	adado		
+targetlocation	sheikaweys	Sheikh Aways - Host 	xudur		
+targetlocation	mooragabey	Mooragaabey - Host 	xudur		
+targetlocation	buulow	Buulow - Host 	xudur		
+targetlocation	camaari	Camaari - Host 	xudur		
+targetlocation	dhurshem	Dhursheen shibeele IDPs	xudur		
+targetlocation	garasweyne	Garasweyn IDPs	xudur		
+targetlocation	doondardir	Doondardiir IDPs	xudur		
+targetlocation	abal	Abal IDPs	xudur		
+targetlocation	dhiil	Dhiil IDPs	xudur		
+targetlocation	tiyeglow1	Tiyeeglow 1 IDPs	xudur		
+targetlocation	tiyeglow2	Tiyeeglow 2  IDPs	xudur		
+targetlocation	lehelow	Lehelow IDPs	xudur		
+targetlocation	doonfey	Doonfeylahow IDPs	xudur		
+targetlocation	madawaraabe	Madawaraabe IDPs	xudur		
+targetlocation	abagbeedye	Abag-Beedey IDPs	xudur		
+targetlocation	banjinney	Banjiney IDPs	xudur		
+targetlocation	moorahagar	Moora Hagar IDPs	xudur		
+targetlocation	shabelle	Shabelle	beledweyne		
+targetlocation	wabishabelle	Wabi shabellle	beledweyne		
+targetlocation	dayax	Dayax	beledweyne		
+targetlocation	allaamin	Alla Amin	beledweyne		
+targetlocation	midnimo	Midnimo	beledweyne		
+targetlocation	shiimo	Shiimo	beledweyne		
+targetlocation	kutiimbo	Ku-tiimbo	beledweyne		
+targetlocation	birmaal	Birmaal	beledweyne		
+targetlocation	bulsho	Bulsho	beledweyne		
+targetlocation	dayax2	Dayax	baraawe		
+targetlocation	wadajir2	Wadajir	baraawe		
+targetlocation	howlwadag2	Howlwadag	baraawe		
+targetlocation	saqawodiin	Saqawo-Diin 	baraawe		
+targetlocation	kulmis	Kulmis	jowhar		
+targetlocation	horseed2	Horseed	jowhar		
+targetlocation	hantiwadag	Hantiwadaag	jowhar		
+targetlocation	buulosheik	Buulo-sheikh	jowhar		
+targetlocation	isnaay	Isnaay IDP Camp	jowhar		
+targetlocation	cee;dibir	Ceel-dibir 	hobyo		
+targetlocation	butbut	Butbut	hobyo		
+targetlocation	insideidps	Inside IDPs in the town - Hobyo	hobyo		
+targetlocation	dhobley2	Dhobley (100% IDPs)	dhobley		
+targetlocation	degelema	Deg-Elema (100% IDPs)	dhobley		
+targetlocation	tulabarwaqo	Tula Barwaqo (100% Host)	dhobley		
+targetlocation	waberi2	Waberi (100% Host)	beledxawa		
+targetlocation	dhabada	Dhabada(100% Host)	beledxawa		
+targetlocation	wadajir3	Wadajir(100% Host)	beledxawa		
+targetlocation	tulaamiin	Tula Amiin (100% IDP)	beledxawa		
+targetlocation	qansaxomana	Qansax Omana (100% IDP)	beledxawa		
+targetlocation	aljazeera	Aljazeera(100% IDP)	luuq		
+targetlocation	luuqgodey	Luuq Godey(100% IDP)	luuq		
+targetlocation	cakaara	Cakaara(100% IDP)	luuq		
+targetlocation	boyle	Boyle(100% IDP)	luuq		
+targetlocation	xero	Xero Kowad(100% IDP)	luuq		
+targetlocation	luuqtown	Luuq Town (100% Host)	luuq		
+targetlocation	farjano	Farjano(100% IDP)	kismayo		
+targetlocation	fanole	Fanole(100% IDP)	kismayo		
+targetlocation	calanley	Calanley(100% IDP)	kismayo		
+targetlocation	midnimo2	Midnimo(100% Host)	kismayo		
+targetlocation	gobweyne	Gobweyn(100% Host)	kismayo		
+targetlocation	yontoy	Yontoy (100% Host)	kismayo		
+targetlocation	kabasa	Kabasa(100% IDPs)	dollow		
+targetlocation	qansaxley	Qansaxley(100% IDPs)	dollow		
+targetlocation	horseed	Horseed(100% Host)	dollow		
+targetlocation	qurdubey	Qurdubey(100% Host)	dollow		
+targetlocation	bacaadweyn	Bacaadweyn	galkayo		
+targetlocation	cagaaran	Cagaaran	galkayo		
+targetlocation	bayra	Bayra	galkayo		
+targetlocation	jeexdin	Jeexdin	galkayo		
+targetlocation	halabookhad	Halabookhad IDP	galkayo		
+targetlocation	salamaidp	Salaama IDP	galkayo		
+targetlocation	cawsame	Cawsane	badhan		
+targetlocation	ceelbuh	Ceelbuh	badhan		
+targetlocation	hadaaftimo	Hadaaftimo	badhan		
+targetlocation	karinkarfood	Karinkarfood	lascanood2		
+targetlocation	boocame	Boocame	lascanood2		
+targetlocation	karindabaylweyne	Karindabaylweyn	lascanood2		
+targetlocation	faridhidin	Faridhidin	lascanood2		
+targetlocation	biriqoday	Biriqoday	lascanood2		
+targetlocation	biyokulul	Biyo Kulul IDP	bossaso		
+targetlocation	100bushidp	100Bush IDP	bossaso		
+targetlocation	ajuraan	Ajuraan IDP	bossaso		
+targetlocation	tawakal	Tawakal IDP	bossaso		
+targetlocation	jawale	Jawale IDP	garowe		
+targetlocation	jilabd	Jilabd IDP	garowe		
+residence	idp	IDP		-1.0	yellow
+residence	refugee	Refugee		-2.0	orange
+residence	returnee	Returnee		0.0	magenta
+residence	host	Host  Community		1.0	lightgreen
+residence	notaffected	Not aﬀected by Displacement		2.0	green
+residence	other	Other		888.0	grey
+livingduration	lessthan1month	Less  than 1 month		0.0	
+livingduration	13months	1-3 months		0.15	
+livingduration	46months	4 - 6 months		0.5	
+livingduration	711months	7 - 11 months		0.75	
+livingduration	1year	1 year		1.0	
+livingduration	2years	2 years		2.0	
+livingduration	3years	3 years		3.0	
+livingduration	4years	4 years		4.0	
+livingduration	5ormoreyears	5 or more years		6.0	
+marriage	single	Single		0.0	
+marriage	engaged	Engaged		0.5	
+marriage	married	Married		1.0	
+marriage	divorcedseparated	Divorced/Separated		0.0	
+marriage	widowedwidower	Widowed/Widower		0.5	
+hhhead	1	Male			
+hhhead	2	Female			
+hhhead	3	Not applicable			
+reasonforsettlement	1	Availability of shelter			
+reasonforsettlement	2	Cost of accommodation			
+reasonforsettlement	3	Access to services			
+reasonforsettlement	4	Access to jobs			
+reasonforsettlement	5	Security			
+reasonforsettlement	6	Access to hospital			
+reasonforsettlement	7	Access to education			
+reasonforsettlement	8	Close to embassies			
+reasonforsettlement	9	Close to NGOs			
+reasonforsettlement	10	Access to assistance			
+reasonforsettlement	11	Had friends or family here			
+reasonforsettlement	12	Other IDPs living here			
+reasonforsettlement	13	Was culturally appropriate			
+reasonforsettlement	14	Authorities told me to come here			
+reasonforsettlement	15	Born or grew up here			
+reasonforsettlement	other	Other			
+getfoodforhh	1	Purchase			
+getfoodforhh	2	Grow			
+getfoodforhh	3	Barter			
+getfoodforhh	4	Gifts			
+getfoodforhh	5	Food Assistance (NGO/UN/ local charity/ Government)			
+getfoodforhh	other	Other			
+cantaccessshops	adultmales	Adult Males			
+cantaccessshops	adultfemales	Adult Females			
+cantaccessshops	elderlymales	Elderly males			
+cantaccessshops	elderlyfemales	Elderly Females			
+cantaccessshops	boys12to17	Boys 12 - 17			
+cantaccessshops	girls12to17	Girls12  - 17			
+cantaccessshops	boys6to11	Boys 6 - 11			
+cantaccessshops	girls6to11	Girls 6 - 11			
+cantaccessshops	boys0to5	Boys 0-5			
+cantaccessshops	girls0to5	Girls 0-5			
+reasoncantaccessshops	1	Too fare			
+reasoncantaccessshops	2	No time to go			
+reasoncantaccessshops	3	Other chores to do			
+reasoncantaccessshops	4	Lack of transport			
+reasoncantaccessshops	5	Transport costs too  high			
+reasoncantaccessshops	6	Transport unsafe			
+reasoncantaccessshops	7	Market area not  safe/security concerns			
+reasoncantaccessshops	8	Not culturally acceptable			
+reasoncantaccessshops	other	Other			
+regularexpence	1	Transport costs			
+regularexpence	2	Rent			
+regularexpence	3	Water			
+regularexpence	4	Education			
+regularexpence	5	Child care / Nursery fees			
+regularexpence	6	Food			
+regularexpence	7	Medicine / Health-related items			
+regularexpence	8	Fuel / Heating (electricity,kerosene, gas, ﬁrewood, etc.			
+regularexpence	9	Business / livelihood assets			
+regularexpence	10	Communication costs (phone, internet, etc.)			
+regularexpence	other	Other			
+pricechange3months	1	Increased		1.0	red
+pricechange3months	2	Decreased		-1.0	green
+pricechange3months	3	Stayed the same		0.0	yellow
+pricechange3months	4	Don't know		888.0	grey
+amountdebt	range1	Range 1 (less than Sh 500k)			
+amountdebt	range2	Range 2 (Sh501k - Sh 1million)			
+amountdebt	range3	Range 3 (Sh1m  - Sh2m)			
+amountdebt	range4	Range 4 (Sh2m  - Sh5m)			
+amountdebt	range5	Range 5 (More than Sh5m)			
+amountdebt	other	Other			
+usagedebt	1	Transport costs			
+usagedebt	2	Rent			
+usagedebt	3	Water			
+usagedebt	4	Education			
+usagedebt	5	Child care/Nursery fees			
+usagedebt	6	Food			
+usagedebt	7	Medicine/Health-related items			
+usagedebt	8	Fuel/Heating (electricity, kerosene, gas, ﬁrewood, etc.)			
+usagedebt	9	Business/livelihood assets			
+usagedebt	10	Communication costs (phone, internet, etc.)			
+usagedebt	other	Other			
+yesnodont	1	Yes			
+yesnodont	2	No			
+yesnodont	3	Don't know			
+oftenhelpothercountry	1	Once a week		5.0	darkgreen
+oftenhelpothercountry	2	Twice a month		2.5	green
+oftenhelpothercountry	3	Once a month		1.25	lightgreen
+oftenhelpothercountry	4	Once every 2 - 3 months		0.5	yellow
+oftenhelpothercountry	5	Once every 4 - 5 months		0.25	gold
+oftenhelpothercountry	6	Once every 6 months		0.15	orange
+oftenhelpothercountry	other	Other		888.0	grey
+difficultyhh	1	Unable to work			
+difficultyhh	other	Other			
+incomeactivities	1	Barber/hairdressing			
+incomeactivities	2	Tailor/seamstress			
+incomeactivities	3	Driver			
+incomeactivities	4	Mechanic			
+incomeactivities	5	Construction Works (daily labour)			
+incomeactivities	6	Blacksmith			
+incomeactivities	7	Factory worker			
+incomeactivities	8	Health-related (doctor/nurse/dentist)			
+incomeactivities	9	Sales  person/shop assistant			
+incomeactivities	10	Electrician			
+incomeactivities	11	Teacher			
+incomeactivities	12	Computer skills/cyber cafe			
+incomeactivities	13	Carpenter			
+incomeactivities	14	Secretary/ administrator			
+incomeactivities	15	Cooking (e.g. restaurants, cafes, snacks and street food)			
+incomeactivities	16	Farming			
+incomeactivities	17	Fishing			
+incomeactivities	18	Selling of humanitarian aid			
+incomeactivities	19	Rental income (from  renting land or property)			
+incomeactivities	20	Pension			
+incomeactivities	21	Hospitality (hotel/guest house)			
+incomeactivities	22	Care giver (children/elderly/sick)			
+incomeactivities	23	Petty/ street trade (food, clothes, traditional handicrafts, etc.)			
+incomeactivities	24	Domestic work/cleaning/washing clothes			
+incomeactivities	25	Other			
+incomeactivities	26	No income			
+incomeact	1	Sh0-Sh500k			
+incomeact	2	Sh501k - Sh1m			
+incomeact	3	Sh1m - Sh2m			
+incomeact	4	Sh2m - Sh3m			
+incomeact	5	More than Sh3m			
+incomeact	6	Don't Know			
+incomeact	other	Other			
+doing3months	1	Nothing		1.0	green
+doing3months	2	Can Manage		0.0	yellow
+doing3months	other	Other		-1.0	red
+accomodation	1	Own home			
+accomodation	2	Formal Camp			
+accomodation	3	Informal Camp			
+accomodation	4	Living with a host family			
+accomodation	5	Rented home			
+accomodation	6	Hut/buul on a land given  by community/relative			
+accomodation	other	Other			
+agreement	1	Oral agreement			
+agreement	2	Title deed			
+agreement	3	Rental agreement			
+agreement	4	Oﬃcial letter of ownership			
+agreement	5	Unoﬃcial letter of ownership			
+agreement	6	Oﬃcial letter of rental			
+agreement	7	Unoﬃcial letter of rental			
+agreement	8	Local authority permit (to occupy abandoned housing or public  buildings).			
+agreement	9	Don't know			
+agreement	other	Other			
+yesnomore	1	Yes		1.0	
+yesnomore	2	No		0.0	
+yesnomore	3	Don't Know		888.0	
+yesnomore	4	In kind		1.0	
+yesnomore	5	Cash		1.0	
+yesnomore	6	Don't pay rent		0.0	
+commoneviction	1	Very rare		0.0	green
+commoneviction	2	Infrequent		0.5	lightgreen
+commoneviction	3	Quite common		1.0	orange
+commoneviction	4	Very Common		2.0	red
+commoneviction	5	Don't Know		888.0	grey
+sevureeviction	1	Very Secure		1.0	green
+sevureeviction	2	Secure		0.5	lightgreen
+sevureeviction	3	Neither Nor		0.0	yellow
+sevureeviction	4	Insecure		0.5	orange
+sevureeviction	5	Very Insecure		-1.0	red
+problems	1	Lack of availability of private accommodation			
+problems	2	Cost of private accommodation			
+problems	3	Discrimination			
+problems	4	Tenancy is not secure ( i.e. risk of eviction)			
+problems	5	Other			
+problems	6	No problem			
+groups	1	Poor			
+groups	2	IDP			
+groups	3	Women			
+groups	4	Disabled			
+groups	5	Elderly			
+groups	6	Young people			
+groups	7	Rural migrant workers			
+groups	8	Refugees			
+groups	9	Ethnic group (specify)			
+groups	10	Religious group )specify)			
+groups	11	Other			
+groups	12	Don't know			
+safety	1	Very safe		1.0	green
+safety	2	Somewhat safe		0.5	lightgreen
+safety	3	Often unsafe		-0.5	orange
+safety	4	Unsafe		-1.0	red
+feelingsafty	1	Fear of eviction			
+feelingsafty	2	Eviction by force			
+feelingsafty	3	Harassment from neighbours			
+feelingsafty	4	Another family could pay more			
+feelingsafty	5	Poor condition of building			
+feelingsafty	6	Dispute with landlord			
+feelingsafty	7	Dispute with local authorities			
+feelingsafty	8	Lack of documentation			
+feelingsafty	9	Lack of security/crime in the neighbourhood			
+feelingsafty	10	Lack of privacy			
+feelingsafty	11	Cannot lock doors and/or window			
+feelingsafty	other	Other			
+reasondispute	1	Multiple claims of land			
+reasondispute	2	Land grabbing			
+reasondispute	3	Forced evictions			
+reasondispute	4	Encroachment			
+reasondispute	5	Destruction of property			
+reasondispute	6	Plot allocation			
+reasondispute	7	Access to water points			
+reasondispute	8	Other			
+disputeresolver	1	Clan elders			
+disputeresolver	2	IDP committee members			
+disputeresolver	3	Religious leaders			
+disputeresolver	4	Government court			
+disputeresolver	5	Family members			
+disputeresolver	6	Others			
+disputeresolver	7	No One			
+legaldocs	1	National IDs			
+legaldocs	2	Birth Certiﬁcate			
+legaldocs	3	Marriage Certiﬁcate			
+legaldocs	4	Divorce  Certiﬁcate			
+legaldocs	5	IDP status document			
+legaldocs	6	Death certiﬁcate			
+legaldocs	7	Work permit			
+legaldocs	8	Passport			
+legaldocs	9	Refugee status document			
+legaldocs	10	Refugee status document (Government issued)(UNHCR issued)			
+legaldocs	11	Other			
+legaldocs	12	None			
+usagedocs	1	To work			
+usagedocs	2	Visa processing			
+usagedocs	3	To access education services			
+usagedocs	4	Access to health services			
+usagedocs	5	Open bank account			
+usagedocs	6	For housing			
+usagedocs	7	Access assistance from Government/UN/NGOs			
+usagedocs	8	To check on property/assets			
+usagedocs	9	Security checks			
+usagedocs	10	Other			
+usagedocs	11	Don't Know			
+ease	1	Easy		1.0	green
+ease	2	Difficult		-1.0	red
+ease	3	Don't know		888.0	grey
+whydifficult	1	Location of relevant oﬃce			
+whydifficult	2	Cost associated with obtaining document			
+whydifficult	3	Takes a long time			
+whydifficult	4	Have tried and have failed			
+whydifficult	5	Not sure why			
+whydifficult	6	Not clear what to do to get document			
+whydifficult	7	Need additional documents that do not have			
+whydifficult	8	Only men can go			
+whydifficult	9	Procedures are confusing			
+whydifficult	10	Need assistance to complete forms – illiteracy			
+whydifficult	11	Necessary documents inaccessible (e.g in another country or location of origin which  is unsafe to travel to)			
+whydifficult	12	Need to be accompanied			
+whydifficult	13	Lack of relevant oﬃce to access documents			
+whydifficult	14	Language barrier			
+whydifficult	other	Other			
+informationreceived	1	How to access civil documentation			
+informationreceived	2	How to access housing			
+informationreceived	3	Names of representatives from local authority departments and locations			
+informationreceived	4	Refugee registration procedures			
+informationreceived	5	Displaced person registration procedures			
+informationreceived	6	Vulnerable household registration procedures			
+informationreceived	7	Emergency health - how to access			
+informationreceived	8	Protection/GBV support			
+informationreceived	9	NGO/UN/Charity registration services/support			
+informationreceived	other	Other			
+provider	1	Local representatives (such as street leaders)			
+provider	2	Local Government			
+provider	3	UN/NGOs/Charities			
+provider	4	CBO/Civil Society			
+provider	5	Other displaced households (refugees and IDPs)			
+provider	6	Religious leader			
+provider	7	Neighbours			
+provider	8	Friends and family			
+provider	9	Landlord			
+provider	10	Armed groups			
+provider	11	Local community groups			
+provider	other	Other			
+languages	1	Maxaa			
+languages	2	May			
+languages	3	Benaadiri			
+methodofcomm	1	Television (including satellite)			
+methodofcomm	2	Internet			
+methodofcomm	3	Social Media (Facebook etc…)			
+methodofcomm	4	Radio			
+methodofcomm	5	Telephone			
+methodofcomm	6	Word of mouth			
+methodofcomm	7	Structured group information sessions			
+methodofcomm	8	Newspapers			
+methodofcomm	9	Community notice boards			
+methodofcomm	10	Group/ collective information sessions			
+methodofcomm	11	Text messages			
+methodofcomm	12	UN/NGO/CBO network/meetings			
+methodofcomm	other	Other			
+justiceaccess	1	Easy		1.0	green
+justiceaccess	2	Difficult		-1.0	red
+justiceaccess	3	Don't Know		888.0	grey
+whyjusticediffclt	1	No functionig courts			
+whyjusticediffclt	other	Other			
+placeofassitance	1	Community representatives;			
+placeofassitance	2	Local organization (legal aid provider);			
+placeofassitance	other	Other			
+shelyettype	1	Buul			
+shelyettype	2	CGI			
+shelyettype	3	Hybrid			
+shelyettype	4	Permanent			
+shelyettype	other	Other			
+sheltermaterial	1	Plastic sheeting			
+sheltermaterial	2	Mud and wattle			
+sheltermaterial	3	Cardboard			
+sheltermaterial	4	Wood and mud			
+sheltermaterial	5	Canvas/material			
+sheltermaterial	6	Tin/metal			
+sheltermaterial	7	Plastic			
+sheltermaterial	8	Concrete			
+sheltermaterial	9	Brick			
+sheltermaterial	10	Thatch			
+sheltermaterial	other	Other			
+damagelevel	1	Severely damaged		1.5	red
+damagelevel	2	Moderately damaged		1.0	orange
+damagelevel		0		0.0	green
+damagelevel	3	Slightly damaged		0.5	yellow
+sheltusage	1	Sleeping			
+sheltusage	2	Cooking			
+sheltusage	3	Storage			
+sheltusage	4	Income generation			
+					
+yesnona	1	Yes			
+yesnona	2	No			
+yesnona	3	No answer			
+lighting	1	Kerosene lantern			
+lighting	2	Kerosene Tin lamp			
+lighting	3	Candles			
+lighting	4	Solar  lamp			
+lighting	5	Electricity			
+lighting	6	Torch			
+lighting	7	Wood			
+lighting	8	Other			
+lighting	9	No source of lighting at night			
+waterpath	1	Water does not  enter the shelter		0.0	green
+waterpath	2	A small area from the roof		1.0	orange
+waterpath	3	A large area from the roof		2.0	red
+waterpath	4	A small area from the wall		0.5	lightblue
+waterpath	5	A large area from the wall		1.0	blue
+waterpath	6	A small area from the ﬂoor		0.5	magenta
+waterpath	7	A large area from the ﬂoor		1.0	violet
+security	1	Very secure		1.0	green
+security	2	Secure		0.5	lightgreen
+security	3	Neither secure nor  insecure		0.0	yellow
+security	4	Insecure		-0.5	orange
+security	5	Very insecure		-1.0	red
+mode	1	In kind			
+mode	2	Cash			
+evictionrisk	1	Very likely		2.0	red
+evictionrisk	2	Likely		1.5	orange
+evictionrisk	3	In the middle		1.0	yellow
+evictionrisk	4	Unlikely		0.5	lightgreen
+evictionrisk	5	Very unlikely		0.0	green
+last_nfi	1	Less than a month ago		0.1	green
+last_nfi	2	1 - 3 months ago		0.2	lightgreen
+last_nfi	3	3-6 months ago		0.4	yellow
+last_nfi	4	6 months - 1 year ago		0.8	orange
+last_nfi	5	More than a year ago		1.0	red
+last_nfi		0		2.0	black
+last_nfi	6	Don't know		888.0	grey
+distributor	1	Community			
+distributor	2	NGO			
+distributor	3	Government			
+distributor	4	Company			
+items	1	Plastic  sheet			
+items	2	Blanket			
+items	3	Sleeping mat			
+items	4	Kitchen sets			
+items	5	Mosquito net			
+items	6	Solar  lamp (torch)			
+items	7	Jerry cans			
+plan	1	Planned		1.0	green
+plan	2	Unplanned		0.0	red
+reason	1	Cannot aﬀord to buy enough			
+reason	2	Rely on only one source that doesn't have enough water			
+reason	3	The water point is very far			
+reason	4	I don't have enough containers			
+reason	5	The water point is broken down			
+reason	6	There is conﬂict related to water			
+reason	7	Other			
+watersource	1	Communal tap			
+watersource	2	Piped water			
+watersource	3	River			
+watersource	4	Borehole			
+watersource	5	Protected well			
+watersource	6	Unprotected well			
+watersource	7	Berkard			
+watersource	8	Water pan			
+watersource	9	Roof catchment			
+watersource	10	Other			
+notfunctional	1	Broken			
+notfunctional	2	Other			
+watercollected	1	<5 litres			
+watercollected	2	5-10 litres			
+watercollected	3	10-20  litres			
+watercollected	4	20-40  litres			
+watercollected	5	40-60ltrs			
+watercollected	6	60-90litres			
+watercollected	7	90 litres  or More			
+duration	1	<15 min			
+duration	2	15-30min			
+duration	3	30min - 1hr			
+duration	4	>1hr			
+watersafety_reason	1	It is clear			
+watersafety_reason	2	There are no particles in it			
+watersafety_reason	3	It has no smell			
+watersafety_reason	4	It is not  salty			
+watersafety_reason	5	Other			
+treatment	1	Boil		0.5	lightblue
+treatment	2	Filter		0.5	lightgreen
+treatment	3	Aquatabs		1.0	green
+		0		0.0	red
+treatment	4	Other		888.0	grey
+unsafe_reason	1	Risk of violence			
+unsafe_reason	2	Other			
+latrine	1	None			
+latrine	2	Bush			
+latrine	3	Communal			
+latrine	4	Shared			
+latrine	5	Family latrine			
+latrine	6	Other			
+latrine_unsafe_reason	1	Risk of violence			
+latrine_unsafe_reason	2	Latrine is unstable			
+latrine_unsafe_reason	3	Other			
+latrine_importance	1	Keep environment clean			
+latrine_importance	2	Prevent spread of diseases;			
+latrine_importance	3	Prevent breeding of ﬂies			
+latrine_importance	4	Protect water sources			
+latrine_importance	5	Social status/Society respect			
+latrine_importance	6	Privacy			
+latrine_importance	7	Other			
+occasions	1	When my hands are dirty			
+occasions	2	After cleaning baby bottom			
+occasions	3	After visiting  latrine/toilet			
+occasions	4	After eating food			
+occasions	5	Before eating/feeding child			
+occasions	6	Other			
+age	1	6 months			
+age	2	6-24 months			
+age	3	24-59  months			
+age	4	>5 years			
+diarrhoea_causes	1	Drinking contaminated water			
+diarrhoea_causes	2	Eating  with dirty hands			
+diarrhoea_causes	3	Eating  contaminated food			
+diarrhoea_causes	4	Feaces (animal or human)			
+diarrhoea_causes	5	Vectors (insects, ﬁles)			
+diarrhoea_causes	6	Don’t Know			
+diarrhoea_causes	7	Other			
+diarrhoea_prevention	1	Wash  hands			
+diarrhoea_prevention	2	Use soap			
+diarrhoea_prevention	3	Use toilet to defecate			
+diarrhoea_prevention	4	Dispose child feaces in latrine			
+diarrhoea_prevention	5	Bury feaces			
+diarrhoea_prevention	6	Drink clean water			
+diarrhoea_prevention	7	Store water safely			
+diarrhoea_prevention	8	Treat water			
+diarrhoea_prevention	9	Prepare food hygienically/protect			
+diarrhoea_prevention	10	Breastfeed baby exclusively			
+diarrhoea_prevention	11	Vaccination			
+diarrhoea_prevention	12	Other			
+messaging_method	1	Commuity Hygiene promoters			
+messaging_method	2	Radio			
+messaging_method	3	Mobile  phone sms			
+messaging_method	4	TV			
+messaging_method	5	Mass  gathering			
+messaging_method	6	Other			
+non_schooled_reason	1	No school exists/too far			
+non_schooled_reason	2	School is not  operating			
+non_schooled_reason	3	Cannot aﬀord the cost  of school			
+non_schooled_reason	4	Child is sick			
+non_schooled_reason	5	Child has a disability			
+non_schooled_reason	6	School environment is inappropriate (e.g. lack of water and sanitation facilities)			
+non_schooled_reason	7	Child is helping inside the home			
+non_schooled_reason	8	Child is working outside the home			
+non_schooled_reason	9	Child doesn't want to go to school;children are not  allowed			
+non_schooled_reason	10	Safety concerns			
+non_schooled_reason	11	Child not  allowed to go to school (parents)			
+non_schooled_reason	12	Child not  allowed to go to school (authorities)			
+non_schooled_reason	13	Do not  have the legal documentation			
+non_schooled_reason	14	Child is not  registered at school			
+non_schooled_reason	15	Child does not understand language used at school			
+non_schooled_reason	16	Other			
+non_schooled_reason2	1	No school exists/too far			
+non_schooled_reason2	2	School is not  operating			
+non_schooled_reason2	3	Cannot aﬀord the cost  of school			
+non_schooled_reason2	4	Child is sick			
+non_schooled_reason2	5	Child has a disability			
+non_schooled_reason2	6	School environment is inappropriate (e.g. lack of water and sanitation facilities)			
+non_schooled_reason2	7	Child is helping inside the home			
+non_schooled_reason2	8	Child is working outside the home			
+non_schooled_reason2	9	Child doesn't want to go to school, ,; children are not  allowed			
+non_schooled_reason2	10	Safety concerns			
+non_schooled_reason2	11	Child not  allowed to go to school (parents)			
+non_schooled_reason2	12	Child not  allowed to go to school (authorities)			
+non_schooled_reason2	13	Do not  have the legal documentation			
+non_schooled_reason2	14	Child is not  registered at school			
+non_schooled_reason2	15	Child does not understand language used at school. 			
+non_schooled_reason2	16	Child is pregnant			
+non_schooled_reason2	17	Child is married			
+non_schooled_reason2	18	Other			
+env_problems	1	Overcrowded classrooms			
+env_problems	2	Lack of female teachers			
+env_problems	3	Lack of male teachers			
+env_problems	4	Poor attendance of teachers			
+env_problems	5	Lack of school supplies			
+env_problems	6	Quality  of teaching			
+env_problems	7	Lack of food			
+env_problems	8	Discipline of teachers,			
+env_problems	9	Discrimination by teachers			
+env_problems	10	Discrimination by students			
+env_problems	11	Security risk			
+env_problems	12	Availability of water			
+env_problems	13	Availability of sanitation facilities			
+env_problems	14	Other			
+children_affected	1	Boys ages 6 - 11			
+children_affected	2	Girls Ages 6 - 11			
+children_affected	3	Boys ages 12 - 17			
+children_affected	4	Girls ages 12 - 17			
+children_affected2	1	Non  formal education			
+children_affected2	2	Primary			
+children_affected2	3	Secondary			
+children_affected2	4	Vocational			
+children_affected2	5	Other			
+challenge	1	No problem			
+challenge	2	Armed conﬂict in the neighbourhood			
+challenge	3	Conﬂict/tension with the local community			
+challenge	4	Discrimination by the community			
+challenge	5	Inﬂux of displaced persons			
+challenge	6	Widespread presence of arms			
+challenge	7	Risk of forced recruitment by armed groups			
+challenge	8	Disappearance/kidnapping of family members			
+challenge	9	Presence of mines/unexploded devices			
+challenge	10	Women or girls are not  safe her			
+challenge	11	Insuﬃcient food			
+challenge	12	Insuﬃcient water			
+challenge	13	Problems with justice			
+challenge	14	Conﬂict  related to property			
+challenge	15	Insuﬃcient land to farm			
+challenge	16	Insuﬃcient water for agriculture			
+challenge	17	Water/pasture insuﬃcient for livestock			
+challenge	18	Lack of privacy			
+challenge	19	Inability  to work			
+challenge	20	Inability  to move freely			
+challenge	21	Access  to education			
+challenge	22	Access  to healthcare			
+challenge	23	Access  to church/mosque/other site  of worship			
+challenge	24	Access  to humanitarian assistance			
+challenge	25	Behaviour of police/local authorities			
+challenge	26	Lack of documents/lost documents			
+challenge	27	Access  to suitable accommodation			
+challenge	28	No income/economic hardship			
+challenge	29	Other			
+asisstance_received	1	Multipurpose cash assistance			
+asisstance_received	2	Tools/stocks to re-start a professional activity			
+asisstance_received	3	Professional training for a new  activity;			
+asisstance_received	4	Basic household items - NFIs (Matress, cooking equipment)			
+asisstance_received	5	Improvement in shelter (Roof, walls, ﬂoor etc)			
+asisstance_received	6	Rehabilitation/construction of latrines			
+asisstance_received	7	Rehabilitation/Construction of water points			
+asisstance_received	8	School fees			
+asisstance_received	9	Health Costs			
+asisstance_received	10	Legal fees/counsel support			
+asisstance_received	11	Credit for small business activities			
+asisstance_received	12	Support to access to services			
+asisstance_received	13	Representation with state/community representatives			
+asisstance_received	14	Support gaining civil documentation			
+asisstance_received	15	Legal and collaborative dispute mechanism			
+asisstance_received	16	Youth education/training activities			
+asisstance_received	17	Other			
+purchase	1	Food			
+purchase	2	Rent  for current accommodation			
+purchase	3	Debt repayment			
+purchase	4	Tools/stocks to re-start a professional activity			
+purchase	5	Professional training for a new  activity			
+purchase	6	Basic household items (Matress, cooking equipment)			
+purchase	7	Extension of accomodation (more rooms)			
+purchase	8	Improvement in shelter (Roof, walls, ﬂoors)			
+purchase	9	Other			
+dangers	1	No dangers			
+dangers	2	Natural disasters			
+dangers	3	Harassment/intimidation by the government/authorities/police			
+dangers	4	Harassment/intimidation by gangs/Local population			
+dangers	5	Criminality/crime			
+dangers	6	Harassment/intimidation by armed groups			
+dangers	7	Forced evictions			
+dangers	8	Destruction of housing			
+dangers	9	Terrorist attacks or bombings			
+dangers	10	Clashes between armed groups			
+dangers	11	Violence  or civil unrest			
+dangers	12	Landmines			
+dangers	13	Kidnapping			
+dangers	14	Violence  against girls and women			
+dangers	15	Displacement			
+dangers	16	Forced recruitment to armed groups			
+dangers	17	Gender based Violence			
+dangers	18	Other			
+servicedelivery	1	Poor		-1.0	red
+servicedelivery	2	Average		0.0	yellow
+servicedelivery	3	Good		1.0	green
+servicedelivery	4	Don't Know		888.0	grey
+noserviceaccess	1	Don't know			
+noserviceaccess	2	All the same			
+noserviceaccess	3	Urban poor			
+noserviceaccess	4	Newly displaced			
+noserviceaccess	5	IDPs			
+noserviceaccess	6	Refugee			
+noserviceaccess	7	Women			
+noserviceaccess	8	Disabled			
+noserviceaccess	9	Chronically ill			
+noserviceaccess	10	Elderly			
+noserviceaccess	11	Young people			
+noserviceaccess	12	Speciﬁc  ethnic groups			
+noserviceaccess	13	Other			
+relationship	1	Myself			
+relationship	2	Spouse			
+relationship	3	Parent			
+relationship	4	Child			
+relationship	5	Sister/Brother			
+relationship	6	Cousin			
+relationship	7	Nephew/Niece			
+relationship	8	Other			
+relationship2	1	Spouse			
+relationship2	2	Parent			
+relationship2	3	Child			
+relationship2	4	Sister/Brother			
+relationship2	5	Cousin			
+relationship2	6	Nephew/Niece			
+relationship2	7	Other			
+yesnofrrent	1	Yes			
+yesnofrrent	2	No			
+yesnofrrent	3	Don't pay rent			
+					
+ccorfield	callcenter	Call Center			
+ccorfield	field	Physically in the field			
+					
+					
+phonecallstatus	1	Phone not ringing			
+phonecallstatus	2	Phone ringing but not answered.			
+phonecallstatus	3	Respondent answered but refused the interview			
+phonecallstatus	4	Respondent answered and accepted the interview			
