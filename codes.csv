@@ -361,10 +361,10 @@ groups	9	Ethnic group (specify)
 groups	10	Religious group )specify)			
 groups	11	Other			
 groups	12	Don't know			
-safety	1	Very safe		1	green
-safety	2	Somewhat safe		0,5	lightgreen
-safety	3	Often unsafe		-0,5	orange
-safety	4	Unsafe		-1	red
+safety	1	Very safe		4	green
+safety	2	Somewhat safe		3	lightgreen
+safety	3	Often unsafe		2	orange
+safety	4	Unsafe		1	red
 feelingsafty	1	Fear of eviction			
 feelingsafty	2	Eviction by force			
 feelingsafty	3	Harassment from neighbours			
@@ -523,11 +523,11 @@ waterpath	4	A small area from the wall		0,5	lightblue
 waterpath	5	A large area from the wall		1	blue
 waterpath	6	A small area from the ﬂoor		0,5	magenta
 waterpath	7	A large area from the ﬂoor		1	violet
-security	1	Very secure		1	green
-security	2	Secure		0,5	lightgreen
-security	3	Neither secure nor  insecure		0	yellow
-security	4	Insecure		-0,5	orange
-security	5	Very insecure		-1	red
+security	1	Very secure		5	green
+security	2	Secure		4	lightgreen
+security	3	Neither secure nor  insecure		3	yellow
+security	4	Insecure		2	orange
+security	5	Very insecure		1	red
 mode	1	In kind			
 mode	2	Cash			
 evictionrisk	1	Very likely		2	red
@@ -595,8 +595,9 @@ treatment	2	Filter		0,5	lightgreen
 treatment	3	Aquatabs		1	green
 treatment		No treatment		0	red
 treatment	4	Other		888	grey
-unsafe_reason	1	Risk of violence			
-unsafe_reason	2	Other			
+unsafe_reason	1	Risk of violence		0	red
+unsafe_reason		Safe		2	green
+unsafe_reason	2	Other		1	orange
 latrine	1	None			
 latrine	2	Bush			
 latrine	3	Communal			
@@ -835,3 +836,7 @@ comm_safety		No		0	red
 comm_safety		Yes		1	green
 maleteachers		No		0	red
 maleteachers		Yes		1	green
+cookingplace		No		0	red
+cookingplace		Yes		1	green
+lockable		No		0	red
+lockable		Yes		1	green

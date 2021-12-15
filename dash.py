@@ -309,20 +309,17 @@ def main():
 		elif topic=='Display CSI or FCS correlations': 
 			title1.title('Correlations related to food security scores (FCS or CSI)')
 			st.markdown("""---""")	
-			st.subheader('On some aspects some districts are very different from the others:')
-			st.markdown("""---""")	
+			
 			quest=correl[correl['topic']=='CSI']
 		elif topic=='Display Security correlations': 
-			title1.title('Correlations related to security related questions')
+			title1.title('Correlations related to security')
 			st.markdown("""---""")	
-			st.subheader('On some aspects some districts are very different from the others:')
-			st.markdown("""---""")	
+				
 			quest=correl[correl['topic']=='secu']
 		else:
 			title1.title('Other correlations')
 			st.markdown("""---""")	
-			st.subheader('On some aspects some districts are very different from the others:')
-			st.markdown("""---""")	
+			
 			quest=correl[correl['topic']=='other']
 		
 		for i in range(len(quest)):
@@ -391,7 +388,7 @@ def main():
 	                            		y=df[quest.iloc[i]['variable_y']][df[quest.iloc[i]['variable_x']] == abscisse],
 	                            		name=abscisse,
 	                            		box_visible=True,
-                           			meanline_visible=True,points="all",))
+                           			meanline_visible=True,points="all", line_color='black', fillcolor='lightseagreen'))
 				fig.update_layout(showlegend=False)
 				fig.update_yaxes(range=[-0.1, maximum],title=quest.iloc[i]['ytitle'])
 				st.subheader(quest.iloc[i]['title'])

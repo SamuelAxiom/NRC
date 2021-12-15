@@ -49,35 +49,28 @@ district	travel			Cost of travel seem high in Zaylac and Badhan		Expenses on tra
 district	water			Water seem particularly expensive in Badan		Expenses on water				Distribution of expenses on water per district	violin	price		150		
 comm_dangers 	duration			In area with conflict issues time for collecting water is higher	What  are the dangers to safety in this community?	time in minutes				Distribution of time to water point and return per dangers in the community	violin	secu		200		
 comm_safety	lockable			When the shelter is lockable people seems to feel safer	Do you  feel safe living in this community?				Is the shelter lockable?	Feeling of safety depending of whether the shelter is lockable	bar	secu				
-commoneviction	feelingsafty 										treemap	secu				
-commoneviction	safety										bar	secu				
-commoneviction	security										bar	secu				
-ease	feelingsafty 										treemap	secu				
-latrine	unsafe_reason 										treemap	secu				
-previouseviction	evictionrisk										bar	secu				
-problems 	evictionrisk										bar	secu				
-safety	security										bar	secu				
-security_patrol	comm_safety										bar	secu				
-sevureeviction	commoneviction										bar	secu				
-sevureeviction	feelingsafty 										treemap	secu				
-sevureeviction	safety										bar	secu				
-sevureeviction	security										bar	secu				
-shelter_satisfied	security										bar	secu				
-theft	previouseviction										bar	secu				
-watersource_functional	unsafe_reason 										bar	secu				
-age 	otheramount			HH with cases of diarrhea over 24 months seem to me more in debt							violin	other		500		
-cantaccessshops 	reasoncantaccessshops 										treemap	other				
-targetlocation	damagelevel										bar	other				
-ease	justiceaccess										bar	other				
-ease	legaldocs 										treemap	other				
-evictionrisk	fuelcost										violin	other				
-incomeactivities 	problems 										bar	other				
-informationreceived 	provider 										treemap	other				
-landcultivation	residence			IDPs are less likely to have access to land							treemap	other				
-legaldocs 	region			maybe…							treemap	other				
-reasons 	plan										bar	other				
-residence	accomodation										bar	other				
-shelter_satisfied	cookingplace										bar	other				
-shelter_satisfied	lockable			the fact to be lockable and have a cooking place is a good point for shelter							bar	other				
-theft	waterconsumed										violin	other				
-watersource 	duration			For some watersource it takes much more time to collect water							violin	other				
+commoneviction	safety			The more frequent the eviction the less safe people are feeling	How common is eviction in this area?				How safe do you feel in your current accommodation?	Safe feeling according to risk of eviction	bar	secu				
+commoneviction	feelingsafty 			When the evictions are at least common it is in the top of the reasons for feeling unsafe						Reason for feeling unsafe according to risk of eviction	treemap	secu				
+commoneviction	security			We have the same in relation to the feeling of security	How common is eviction in this area?				 How secure do you  feel in your  shelter?	Feeling of security in the shelter according to risk of eviction	bar	secu				
+ease	feelingsafty 			Where it is difficult to access documents, all the different risks are more important						Safe feeling according impression of difficulty to access the document needed	treemap	secu				
+latrine	unsafe_reason 			People having no latrines (including bush) are globally feeling less safe						Why people do not feel safe per type of latrine.	treemap	secu				
+previouseviction	evictionrisk			People who have already been evicted consider themselves more likely to be evicted again	Have you been evicted previously without due process and enough notice of at least 2 months				 What  is the risk that you  will be evicted from this land?	Risk of eviction depending on previous eviction	bar	secu				
+security_patrol	comm_safety			Presence of security patrol tends to highly increase the feeling of safety in the community	Are there any  law  enforcers / security personnel patrolling this area?				Do you  feel safe living in this community?	Feeling of safety depending on presence of scurity patrols	bar	secu				
+sevureeviction	safety			When people are afraid to be evicted they are more likely to feel insecure in their shelter	How secure do you feel against eviction?				 How secure do you  feel in your  shelter?	Feeling of security according to risk of eviction	bar	secu				
+sevureeviction	feelingsafty 			For those feeling unsafe the fear of eviction is on the top reasons for feeling unsafe						Reason for feeling unsafe according to estimation of risk to be evicted	treemap	secu				
+sevureeviction	security			People feeling secure in their shelter are globally not afraid to be evicted.	How secure do you feel against eviction?				 How secure do you  feel in your  shelter?	Feeling of security in the shelter according fear to be evicted	bar	secu				
+shelter_satisfied	security			People satisfied with their shelter are globally not afraid to be evicted.	Are you  satisﬁed with your  current shelter?				 How secure do you  feel in your  shelter?	Satisfaction with the shelter according to feeling of security	bar	secu				
+theft	previouseviction			People who have already been evicted seems more likely to live in places where there has been thefts.	Have there been a theft in the current shelter for the past 6 months?				Have you been evicted previously without due process and enough notice of at least 2 months	Prevalence of theft according to previous eviction	bar	secu				
+watersource_functional	unsafe_reason 			Where the watersource is regularly functional people are more likely to feel safer.	Is your  water source functional regularly?				Why don't you  or other family members feel safe?	Safety feeling according to whether the watersource is regularly functionnal	bar	secu				
+age 	otheramount			If we look at median and mean, it seems that households with cases of diarrhea over 24 months seem to me more in debt	Has any  member of your  family had  diarrhoea in the last 2 weeks?	Total debt (USD)				Distribution of debt amount according to age of member of the family who suffered from diarrhea	violin	other		500		
+cantaccessshops 	reasoncantaccessshops 			There is no difference of reason to access market for gender or age. Main reasons being distance and costs.						Which household members can't access the shops and/ or markets and why	treemap	other				
+targetlocation	damagelevel			In some target locations, most shelter are quite damaged	Target location				How can you describe the damage on your shelter?	Damage level of the shelter per target location	bar	other				
+ease	justiceaccess			Where access to justice is easy so is the access to the documents needed.	In your opinion, is it easy or diﬃcult to access the documents you need?				How easy do you think it is to access justice?	Access to justice and acess to necessary documents	bar	other				
+ease	legaldocs 			Where access to necessary documents is easy, most people have legal documents						Document in possesion according to how easy it is to get access to necessary documents	treemap	other				
+informationreceived 	provider 			Main providers of informations change from one topic to another						What information is received and from who	treemap	other				
+landcultivation	residence			IDPs are less likely to have access to land						Access to land per residency status	treemap	other				
+legaldocs 	region			In southcentral region much more people have no legal document at all						Document in possession per region	treemap	other				
+accomodation	residence			Nature of shelter differs according to residency status	Which of these best describes your present accommodation?				What is your residence status?	Description of shelter per residence status	bar	other				
+shelter_satisfied	cookingplace			People are more likely to be satisfied with their shelter if their is a cooking place	Are you  satisﬁed with your  current shelter?				Is there a place for cooking?	Satisfaction of shelter and presence of cooking place	bar	other				
+shelter_satisfied	lockable			People are more likely to be satisfied with their shelter if it is locakble	Are you  satisﬁed with your  current shelter?				Is the shelter lockable?	Satisfaction of shelter and possibility to lock the shelter	bar	other				
+watersource 	duration			For some watersource it takes much more time to collect water	Where do you  get your  water from? For drinking and  domestic use.	How long does it take you  to reach your <br> water point and  return? (in minutes)				Distribution of time to collect water per water source	violin	other				
