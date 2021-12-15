@@ -1,108 +1,108 @@
 variable_x	variable_y	description	xtitle	ytitle	legendtitle	title	graphtype	topic		max	min	
-accomodation	latitude											
-age 	otheramount	HH with cases of diarrhea over 24 months seem to me more in debt					bar			500		
-agreement	latitude											
-boys12to17	schooled_boys2_ %						violin					
-boys6to11	schooled_boys_ %	The more there are boys at school the less likely they are scholarized					violin					
-cantaccessshop	reasoncantaccessshop						treemap					
-challenge1	latitude						map		select			
-children_affected2 	CSI						violin					
-children_affected2 	region						treemap					
-comm_dangers	duration						violin					
-comm_dangers	plan						bar					
-comm_safety	lockable						bar					
-commoneviction	feelingsafty						treemap					add wordcloud with reasons
-commoneviction	safety						bar					
-commoneviction	security						bar					
-consentschool	comm_safety	Safety feeling seems also an important factor					bar					
-consentschool	maleteachers	When there are male teachers people seem more willing to send children to school					bar					
-CSI	latitude											
-damagelevel	targetlocation						bar					
-difficultyhh	District_clean	Those who did not answer « unable to work » are located in few districts and are mainly from south centrla and jubaland					bar		filter districts			
-district	averageincomeexact	In Baidoa, Xudur or Burao, incomes seem pretty low.		average monthly income (USD)		Distribution of average income per district	bar	price		400		
-district	pricechange3months	In some regions like Baidoa and Dhobley it seems that the cost of living may have a bit decreased while it seems to have increased everywhere else				Evolution of prices per districts	violin	price				
+district	doing3months	They are quite a lot in Adado					bar	CSI				
+doing3months	CSI	Those who answered Other are particularly vulnerable according to CSI					violin	CSI				
+FCS	CSI						violin	CSI				
+gender HHH	FCS						bar	CSI				
+incomeactivities	FCS						bar	CSI				
+livingduration	FCS						bar	CSI				
+payments	FCS	hability to mett all the household needs does not impact on the FCS					bar	CSI				
+reasons 	FCS						bar	CSI				
+region	CSI						violin	CSI				
+regularexpense1	CSI	Those for which Medicine and health is the largest expense are more vulnerable in regards to CSI					violin	CSI				
+security_patrol	FCS						bar	CSI				
+sheltermaterial 	FCS						bar	CSI				
+targetlocation	FCS	Some target location seem particularly vulnerable in regards to FCS	Target location		FSC category	FCS per target location	bar	CSI				add wordcloud with reasons
+totalhhsize	FCS	the size of the household does not have much impact on the FCS					violin	CSI				
+whydifficult 	FCS	maybe…					bar	CSI				
+district	residence	The status of interviewed people is very different from one place to another which could explain also some of the difference that comes out of each districts.	District		What is your residence status?	Residence status per district	bar	dist				
+district	watersource_functional	Most problematic districts are Garowe and Bossasso	District		Is your  water source functional regularly?	Usability of the watersource per district	bar	dist				
+district	CSI	Adaado inhabitants for example seem particularly vunerables.		CSI index		CSI index distribution per district	violin	dist		60		
+district	damagelevel	In Zaylac, shelter are particularly in bad conditions	District		How can you describe the damage on your shelter?	Shelter damages per district	bar	dist				
+district	doctenure	In Burao almost everyone has a land tenure document	District		Do you have a land tenure document?	Possession of land tenure document per district	bar	dist				
+district	duration	Water collection take much more time in Guricel than in Mogadishu for example		How long does it take you  to reach your  water point and  return? (in minutes)		Distribution of time since the household settled where they are per district	violin	dist		300		
+district	ease	In some places it looks easy (Bahdan, Berbera…) in others very difficult (Jowhar, Dhobley,…)	District		In your opinion, is it easy or diﬃcult to access the documents you need?	Access to documents per district	bar	dist				
+district	gender HHH	In Bossasso most of the households interviewed are headed by a woman.	District		Gender of the head of the household	Gender of the head of the household per district	bar	dist				
+district	justiceaccess	In some places it looks easy (Bahdan, Berbera…) in others very difficult (Jowhar, Dhobley,…)	District		How easy do you think it is to access justice?	Access to justice per district	bar	dist				
+district	last_nfi	It seems that in Bossasso and Mogadisho almost nobody received any NFI	District		When was the last time you  received the NFI kits?	Last distribution of NFI per district	bar	dist				
+district	needs	In Xudur and Beledweyne for example shelter seems most of the time to small.	District		Does the current shelter meet your  space needs?	Space in shelter per district	bar	dist				
+district	plan	In Luuq and Buhoodley for example there seems to be very few site planning.	District		Is the settlement planned or not?  (Site  planning)	Site planning per district	bar	dist				
+district	servicedelivery	The quality of services available seems globaly very poor and even worst in some districts like Luuq or Burao.	District		What is your  opinion of the delivery of basic services (health, education, water) in this community?	Quality of basic services per district	bar	dist				
+district	sevureeviction	Hobyo seems particularly secure while Mogadisho, Bossasso and Jowhar not that much.	District		How secure do you feel against eviction?	Security feeling related to eviction per district	bar	dist				
+district	treat	While almost nobody treats it water in Adaado or some other districts, about 50 % do it in Jowhar or Dhobley for example	District		Do you  treat your  water before drinking?	Treatment of water per district	bar	dist				
+district	treatment	The type of treatments varies also pretty much from one place to another	District		What  type of treatment do you  use?	Type of water treatment per district	bar	dist				
+district	covid	Laascanod Puntland seems to have had much more cases of COVID	District		Did anyone in your household suffer from COVID 19 ?	COVID cases per district	bar	dist				
+district	jobloss	We see that more people have lost jobs due to COVID thant those who said they has cases in their household. And while there are over 20 % in some district in other almost nobody was affected by this.	District		Did you  or anyone in your  household loss employment or income means due to COVID-19 crisis?	Loss of employement due to COVID per district	bar	dist				
+district	difficultyhh	Those who did not answer « unable to work » are located in few districts and are mainly from south centrla and jubaland	District	need wordclouds			bar		filter districts			
+girls12to17	schooled_girls2_ %						violin	educ				
+girls6to11	schooled_girls_ %	This is not the case for girls					violin	educ				
+incomeactivities	schooled_girls_ %						violin	educ				
+maleteacher	schooled_boys_ %	When there are male teachers people seem more willing to send children to school					violin	educ				
+boys12to17	schooled_boys2_ %						violin	educ				
+boys6to11	schooled_boys_ %	The more there are boys at school the less likely they are scholarized					violin	educ				
+children_affected2 	CSI						violin	educ				
+children_affected2 	region						treemap	educ				
+femaleteacher	schooled_girls_ %	maybe ???					violin	educ				
+consentschool	comm_safety	Safety feeling seems also an important factor					bar	educ				
+consentschool	maleteachers	When there are male teachers people seem more willing to send children to school					bar	educ				
+district	averageincomeexact	In Baidoa, Xudur or Burao, incomes seem pretty low.		average monthly income (USD)		Distribution of average income per district	violin	price		400		
+district	pricechange3months	In some regions like Baidoa and Dhobley it seems that the cost of living may have a bit decreased while it seems to have increased everywhere else				Evolution of prices per districts	bar	price				
 district	costoffeeding	In Zaylac and Lascaood (Puntland) the cost of food seem particularly high		Cost to feed the household		Distribution of costs to feed the household per district	violin	price		150		
-district	schooling	School seems also quite expensive in Lascanood Puntland despite not so high incomes.		Expenses on education		Distribution of expenses on education per district	violin	price		150		
-district	water	Water seem particularly expensive in Badan		Expenses on water		Distribution of expenses on water per district	violin	price		150		
-district	travel	Cost of travel seem high in Zaylac and Badhan		Expenses on travel for food		Distribution of expenses on travel for food per district	violin	price		200		
 district	fuelcost	Fuel for cooking seem more expensive in Laascanod Somaliland and Badhan		Expenses on fuel for cooking		Distribution of expenses on fuel for cooking per district	violin	price		200		
 district	livelihood	Running a business seem more expensive in Zaylac		Expenses on livelihood and business assets		Distribution of expenses on livelihood and business assets per district	violin	price		500		
 district	medical	For medical expenses we can see also some differences from one place to another.		Expenses on health		Distribution of expenses on health per district	violin	price		300		
-district	CSI						violin	dist		60		
-district	doing3months	They are quite a lot in Adado					bar	dist				
-district	doctenure						bar	dist				
-district	sevureeviction						bar	dist				
-district	ease						bar	dist				
-district	justiceaccess						bar	dist				
-district	damagelevel						bar	dist				
-district	needs						bar	dist				
-district	last_nfi						bar	dist				
-district	plan						bar	dist				
-district	watersource_functional						bar	dist				
-district	treat						bar	dist				
-district	treatment						bar	dist				
-district	servicedelivery						bar	dist				
-district	covid						bar	dist				
-district	jobloss						bar	dist				
-district	gender HHH						bar	dist				
-district	duration						violin	dist		300		
-doing3months	CSI	Those who answered Other are particularly vulnerable according to CSI					violin					
-ease	feelingsafty						treemap					
+district	schooling	School seems also quite expensive in Lascanood Puntland despite not so high incomes.		Expenses on education		Distribution of expenses on education per district	violin	price		150		
+district	travel	Cost of travel seem high in Zaylac and Badhan		Expenses on travel for food		Distribution of expenses on travel for food per district	violin	price		200		
+district	water	Water seem particularly expensive in Badan		Expenses on water		Distribution of expenses on water per district	violin	price		150		
+comm_dangers	duration						violin	secu				
+comm_dangers	plan						bar	secu				
+comm_safety	lockable						bar	secu				
+commoneviction	feelingsafty						treemap	secu				
+commoneviction	safety						bar	secu				
+commoneviction	security						bar	secu				
+ease	feelingsafty						treemap	secu				
+latrine 	unsafe_reason						treemap	secu				
+previouseviction	evictionrisk						bar	secu				
+problems	evictionrisk						bar	secu				
+safety	security						bar	secu				
+security_patrol	comm_safety						bar	secu				
+sevureeviction	commoneviction						bar	secu				
+sevureeviction	feelingsafty						treemap	secu				
+sevureeviction	safety						bar	secu				
+sevureeviction	security						bar	secu				
+shelter_satisfied	security						bar	secu				
+theft	previouseviction						bar	secu				
+watersource_functionnal	unsafe_reason						bar	secu				
+age 	otheramount	HH with cases of diarrhea over 24 months seem to me more in debt					bar			500		
+cantaccessshop	reasoncantaccessshop						treemap					
+damagelevel	targetlocation						bar					
 ease	justiceaccess						bar					
 ease	legaldocs						treemap					
-env_problem	latitude						map		select			
 evictionrisk	fuelcost						violin					
-FCS	CSI											
-femaleteacher	schooled_girls_ %	maybe ???					violin					
-gender HHH	FCS						bar					
-getfoodforhh 	latitude						map		select			
-girls12to17	schooled_girls2_ %						violin					
-girls6to11	schooled_girls_ %	This is not the case for girls					violin					
-groups 	latitude						map		select			
-incomeactivities	FCS						bar					
-incomeactivities	latitude						map		select			
 incomeactivities	problems						bar					
-incomeactivities	schooled_girls_ %											
-informationreceived	latitude						map		select			
 informationreceived	provider						treemap					
 landcultivation	residence	IDPs are less likely to have access to land					treemap					
-latrine 	unsafe_reason						treemap					
-latrine_unsafe_reason	latitude	Risk of violence seem to be very much localized					map		select			
 legaldocs 	region	maybe…					treemap					
-livingduration	FCS						bar					
-maleteacher	schooled_boys_ %	When there are male teachers people seem more willing to send children to school					violin					
-payments	FCS	hability to mett all the household needs does not impact on the FCS					bar					
-placeofassistance	latitude						map		select			
-placeofassistance	latitude						map		select			
-previouseviction	evictionrisk						bar					
-problems	evictionrisk						bar					
-provider	latitude						map		select			
-reasoncantaccessshop	latitude						map		need to include also cantaccessshop			
-reasonforsettlement	latitude						map		select			
-reasons 	FCS						bar					
 reasons 	plan						bar					
-region	CSI											
-regularexpense1	CSI	Those for which Medicine and health is the largest expense are more vulnerable in regards to CSI					violin					
-regularexpense1	latitude						map					
 residence 	accomodation 						bar					
-residence 	district						bar					
-safety	security						bar					
-security_patrol	comm_safety						bar					
-security_patrol	FCS						bar					
-sevureeviction	commoneviction						bar					
-sevureeviction	feelingsafty						treemap					
-sevureeviction	safety						bar					
-sevureeviction	security						bar					
 shelter_satisfied	cookingplace						bar					
 shelter_satisfied	lockable	the fact to be lockable and have a cooking place is a good point for shelter					bar					
-shelter_satisfied	security						bar					
-sheltermaterial 	FCS						bar					
-targetlocation	FCS	Some target location seem particularly vulnerable in regards to FCS	Target location		FSC category	FCS per target location	bar					
-theft	previouseviction						bar					
 theft	waterconsumed						violin					
-totalhhsize	FCS	the size of the household does not have much impact on the FCS					violin					
-watersafety_reason	latitude						map		select			
 watersource	duration	For some watersource it takes much more time to collect water					violin					
-watersource_functionnal	unsafe_reason						bar					
-whydifficult 	FCS	maybe…					bar					
-women_diff	latitude						map		select			
+												
+												
+							map		select			
+												
+							map		select			
+							map		select			
+							map		select			
+							map		select			
+							map		select			
+		Risk of violence seem to be very much localized					map		select			
+							map		select			
+							map		select			
+							map		select			
+							map		need to include also cantaccessshop			
+							map		select			
+							map					
+							map		select			
+							map		select			

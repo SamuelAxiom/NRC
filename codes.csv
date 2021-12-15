@@ -10,8 +10,8 @@ yesnodk	2	No
 yesnodk	99	Don't know			
 testvalid	1	Valid			
 testvalid	2	Test			
-gender	1	Male		1.0	Blue
-gender	2	Female		0.0	Pink
+gender	1	Male		1	Blue
+gender	2	Female		0	Pink
 region	somaliland	Somaliland			yellow
 region	jubaland	Jubaland			blue
 region	puntland	Puntland			red
@@ -166,26 +166,26 @@ targetlocation	ajuraan	Ajuraan IDP	bossaso
 targetlocation	tawakal	Tawakal IDP	bossaso		
 targetlocation	jawale	Jawale IDP	garowe		
 targetlocation	jilabd	Jilabd IDP	garowe		
-residence	idp	IDP		-1.0	yellow
-residence	refugee	Refugee		-2.0	orange
-residence	returnee	Returnee		0.0	magenta
-residence	host	Host  Community		1.0	lightgreen
-residence	notaffected	Not aﬀected by Displacement		2.0	green
-residence	other	Other		888.0	grey
-livingduration	lessthan1month	Less  than 1 month		0.0	
-livingduration	13months	1-3 months		0.15	
-livingduration	46months	4 - 6 months		0.5	
-livingduration	711months	7 - 11 months		0.75	
-livingduration	1year	1 year		1.0	
-livingduration	2years	2 years		2.0	
-livingduration	3years	3 years		3.0	
-livingduration	4years	4 years		4.0	
-livingduration	5ormoreyears	5 or more years		6.0	
-marriage	single	Single		0.0	
-marriage	engaged	Engaged		0.5	
-marriage	married	Married		1.0	
-marriage	divorcedseparated	Divorced/Separated		0.0	
-marriage	widowedwidower	Widowed/Widower		0.5	
+residence	idp	IDP		-1	yellow
+residence	refugee	Refugee		-2	orange
+residence	returnee	Returnee		0	magenta
+residence	host	Host  Community		1	lightgreen
+residence	notaffected	Not aﬀected by Displacement		2	green
+residence	other	Other		888	grey
+livingduration	lessthan1month	Less  than 1 month		0	
+livingduration	13months	1-3 months		0,15	
+livingduration	46months	4 - 6 months		0,5	
+livingduration	711months	7 - 11 months		0,75	
+livingduration	1year	1 year		1	
+livingduration	2years	2 years		2	
+livingduration	3years	3 years		3	
+livingduration	4years	4 years		4	
+livingduration	5ormoreyears	5 or more years		6	
+marriage	single	Single		0	
+marriage	engaged	Engaged		0,5	
+marriage	married	Married		1	
+marriage	divorcedseparated	Divorced/Separated		0	
+marriage	widowedwidower	Widowed/Widower		0,5	
 hhhead	1	Male			
 hhhead	2	Female			
 hhhead	3	Not applicable			
@@ -241,10 +241,10 @@ regularexpence	8	Fuel / Heating (electricity,kerosene, gas, ﬁrewood, etc.
 regularexpence	9	Business / livelihood assets			
 regularexpence	10	Communication costs (phone, internet, etc.)			
 regularexpence	other	Other			
-pricechange3months	1	Increased		1.0	red
-pricechange3months	2	Decreased		-1.0	green
-pricechange3months	3	Stayed the same		0.0	yellow
-pricechange3months	4	Don't know		888.0	grey
+pricechange3months	1	Increased		1	red
+pricechange3months	2	Decreased		-1	green
+pricechange3months	3	Stayed the same		0	yellow
+pricechange3months	4	Don't know		888	grey
 amountdebt	range1	Range 1 (less than Sh 500k)			
 amountdebt	range2	Range 2 (Sh501k - Sh 1million)			
 amountdebt	range3	Range 3 (Sh1m  - Sh2m)			
@@ -265,13 +265,13 @@ usagedebt	other	Other
 yesnodont	1	Yes			
 yesnodont	2	No			
 yesnodont	3	Don't know			
-oftenhelpothercountry	1	Once a week		5.0	darkgreen
-oftenhelpothercountry	2	Twice a month		2.5	green
-oftenhelpothercountry	3	Once a month		1.25	lightgreen
-oftenhelpothercountry	4	Once every 2 - 3 months		0.5	yellow
-oftenhelpothercountry	5	Once every 4 - 5 months		0.25	gold
-oftenhelpothercountry	6	Once every 6 months		0.15	orange
-oftenhelpothercountry	other	Other		888.0	grey
+oftenhelpothercountry	1	Once a week		5	darkgreen
+oftenhelpothercountry	2	Twice a month		2,5	green
+oftenhelpothercountry	3	Once a month		1,25	lightgreen
+oftenhelpothercountry	4	Once every 2 - 3 months		0,5	yellow
+oftenhelpothercountry	5	Once every 4 - 5 months		0,25	gold
+oftenhelpothercountry	6	Once every 6 months		0,15	orange
+oftenhelpothercountry	other	Other		888	grey
 difficultyhh	1	Unable to work			
 difficultyhh	other	Other			
 incomeactivities	1	Barber/hairdressing			
@@ -307,9 +307,9 @@ incomeact	4	Sh2m - Sh3m
 incomeact	5	More than Sh3m			
 incomeact	6	Don't Know			
 incomeact	other	Other			
-doing3months	1	Nothing		1.0	green
-doing3months	2	Can Manage		0.0	yellow
-doing3months	other	Other		-1.0	red
+doing3months	1	Nothing		1	green
+doing3months	2	Can Manage		0	yellow
+doing3months	other	Other		-1	red
 accomodation	1	Own home			
 accomodation	2	Formal Camp			
 accomodation	3	Informal Camp			
@@ -327,22 +327,22 @@ agreement	7	Unoﬃcial letter of rental
 agreement	8	Local authority permit (to occupy abandoned housing or public  buildings).			
 agreement	9	Don't know			
 agreement	other	Other			
-yesnomore	1	Yes		1.0	
-yesnomore	2	No		0.0	
-yesnomore	3	Don't Know		888.0	
-yesnomore	4	In kind		1.0	
-yesnomore	5	Cash		1.0	
-yesnomore	6	Don't pay rent		0.0	
-commoneviction	1	Very rare		0.0	green
-commoneviction	2	Infrequent		0.5	lightgreen
-commoneviction	3	Quite common		1.0	orange
-commoneviction	4	Very Common		2.0	red
-commoneviction	5	Don't Know		888.0	grey
-sevureeviction	1	Very Secure		1.0	green
-sevureeviction	2	Secure		0.5	lightgreen
-sevureeviction	3	Neither Nor		0.0	yellow
-sevureeviction	4	Insecure		0.5	orange
-sevureeviction	5	Very Insecure		-1.0	red
+yesnomore	1	Yes		1	
+yesnomore	2	No		0	
+yesnomore	3	Don't Know		888	
+yesnomore	4	In kind		1	
+yesnomore	5	Cash		1	
+yesnomore	6	Don't pay rent		0	
+commoneviction	1	Very rare		0	green
+commoneviction	2	Infrequent		0,5	lightgreen
+commoneviction	3	Quite common		1	orange
+commoneviction	4	Very Common		2	red
+commoneviction	5	Don't Know		888	grey
+sevureeviction	1	Very Secure		1	green
+sevureeviction	2	Secure		0,5	lightgreen
+sevureeviction	3	Neither Nor		0	yellow
+sevureeviction	4	Insecure		-0,5	orange
+sevureeviction	5	Very Insecure		-1	red
 problems	1	Lack of availability of private accommodation			
 problems	2	Cost of private accommodation			
 problems	3	Discrimination			
@@ -361,10 +361,10 @@ groups	9	Ethnic group (specify)
 groups	10	Religious group )specify)			
 groups	11	Other			
 groups	12	Don't know			
-safety	1	Very safe		1.0	green
-safety	2	Somewhat safe		0.5	lightgreen
-safety	3	Often unsafe		-0.5	orange
-safety	4	Unsafe		-1.0	red
+safety	1	Very safe		1	green
+safety	2	Somewhat safe		0,5	lightgreen
+safety	3	Often unsafe		-0,5	orange
+safety	4	Unsafe		-1	red
 feelingsafty	1	Fear of eviction			
 feelingsafty	2	Eviction by force			
 feelingsafty	3	Harassment from neighbours			
@@ -415,9 +415,9 @@ usagedocs	8	To check on property/assets
 usagedocs	9	Security checks			
 usagedocs	10	Other			
 usagedocs	11	Don't Know			
-ease	1	Easy		1.0	green
-ease	2	Difficult		-1.0	red
-ease	3	Don't know		888.0	grey
+ease	1	Easy		1	green
+ease	2	Difficult		-1	red
+ease	3	Don't know		888	grey
 whydifficult	1	Location of relevant oﬃce			
 whydifficult	2	Cost associated with obtaining document			
 whydifficult	3	Takes a long time			
@@ -471,9 +471,9 @@ methodofcomm	10	Group/ collective information sessions
 methodofcomm	11	Text messages			
 methodofcomm	12	UN/NGO/CBO network/meetings			
 methodofcomm	other	Other			
-justiceaccess	1	Easy		1.0	green
-justiceaccess	2	Difficult		-1.0	red
-justiceaccess	3	Don't Know		888.0	grey
+justiceaccess	1	Easy		1	green
+justiceaccess	2	Difficult		-1	red
+justiceaccess	3	Don't Know		888	grey
 whyjusticediffclt	1	No functionig courts			
 whyjusticediffclt	other	Other			
 placeofassitance	1	Community representatives;			
@@ -495,10 +495,10 @@ sheltermaterial	8	Concrete
 sheltermaterial	9	Brick			
 sheltermaterial	10	Thatch			
 sheltermaterial	other	Other			
-damagelevel	1	Severely damaged		1.5	red
-damagelevel	2	Moderately damaged		1.0	orange
-damagelevel		0		0.0	green
-damagelevel	3	Slightly damaged		0.5	yellow
+damagelevel	1	Severely damaged		1,5	red
+damagelevel	2	Moderately damaged		1	orange
+damagelevel		No damage		0	green
+damagelevel	3	Slightly damaged		0,5	yellow
 sheltusage	1	Sleeping			
 sheltusage	2	Cooking			
 sheltusage	3	Storage			
@@ -516,32 +516,32 @@ lighting	6	Torch
 lighting	7	Wood			
 lighting	8	Other			
 lighting	9	No source of lighting at night			
-waterpath	1	Water does not  enter the shelter		0.0	green
-waterpath	2	A small area from the roof		1.0	orange
-waterpath	3	A large area from the roof		2.0	red
-waterpath	4	A small area from the wall		0.5	lightblue
-waterpath	5	A large area from the wall		1.0	blue
-waterpath	6	A small area from the ﬂoor		0.5	magenta
-waterpath	7	A large area from the ﬂoor		1.0	violet
-security	1	Very secure		1.0	green
-security	2	Secure		0.5	lightgreen
-security	3	Neither secure nor  insecure		0.0	yellow
-security	4	Insecure		-0.5	orange
-security	5	Very insecure		-1.0	red
+waterpath	1	Water does not  enter the shelter		0	green
+waterpath	2	A small area from the roof		1	orange
+waterpath	3	A large area from the roof		2	red
+waterpath	4	A small area from the wall		0,5	lightblue
+waterpath	5	A large area from the wall		1	blue
+waterpath	6	A small area from the ﬂoor		0,5	magenta
+waterpath	7	A large area from the ﬂoor		1	violet
+security	1	Very secure		1	green
+security	2	Secure		0,5	lightgreen
+security	3	Neither secure nor  insecure		0	yellow
+security	4	Insecure		-0,5	orange
+security	5	Very insecure		-1	red
 mode	1	In kind			
 mode	2	Cash			
-evictionrisk	1	Very likely		2.0	red
-evictionrisk	2	Likely		1.5	orange
-evictionrisk	3	In the middle		1.0	yellow
-evictionrisk	4	Unlikely		0.5	lightgreen
-evictionrisk	5	Very unlikely		0.0	green
-last_nfi	1	Less than a month ago		0.1	green
-last_nfi	2	1 - 3 months ago		0.2	lightgreen
-last_nfi	3	3-6 months ago		0.4	yellow
-last_nfi	4	6 months - 1 year ago		0.8	orange
-last_nfi	5	More than a year ago		1.0	red
-last_nfi		0		2.0	black
-last_nfi	6	Don't know		888.0	grey
+evictionrisk	1	Very likely		2	red
+evictionrisk	2	Likely		1,5	orange
+evictionrisk	3	In the middle		1	yellow
+evictionrisk	4	Unlikely		0,5	lightgreen
+evictionrisk	5	Very unlikely		0	green
+last_nfi	1	Less than a month ago		0,1	green
+last_nfi	2	1 - 3 months ago		0,2	lightgreen
+last_nfi	3	3-6 months ago		0,4	yellow
+last_nfi	4	6 months - 1 year ago		0,8	orange
+last_nfi	5	More than a year ago		1	red
+last_nfi		Never received		2	darkgrey
+last_nfi	6	Don't know		888	lightgrey
 distributor	1	Community			
 distributor	2	NGO			
 distributor	3	Government			
@@ -553,8 +553,8 @@ items	4	Kitchen sets
 items	5	Mosquito net			
 items	6	Solar  lamp (torch)			
 items	7	Jerry cans			
-plan	1	Planned		1.0	green
-plan	2	Unplanned		0.0	red
+plan	1	Planned		1	green
+plan	2	Unplanned		0	red
 reason	1	Cannot aﬀord to buy enough			
 reason	2	Rely on only one source that doesn't have enough water			
 reason	3	The water point is very far			
@@ -590,11 +590,11 @@ watersafety_reason	2	There are no particles in it
 watersafety_reason	3	It has no smell			
 watersafety_reason	4	It is not  salty			
 watersafety_reason	5	Other			
-treatment	1	Boil		0.5	lightblue
-treatment	2	Filter		0.5	lightgreen
-treatment	3	Aquatabs		1.0	green
-		0		0.0	red
-treatment	4	Other		888.0	grey
+treatment	1	Boil		0,5	lightblue
+treatment	2	Filter		0,5	lightgreen
+treatment	3	Aquatabs		1	green
+treatment		No treatment		0	red
+treatment	4	Other		888	grey
 unsafe_reason	1	Risk of violence			
 unsafe_reason	2	Other			
 latrine	1	None			
@@ -778,10 +778,10 @@ dangers	15	Displacement
 dangers	16	Forced recruitment to armed groups			
 dangers	17	Gender based Violence			
 dangers	18	Other			
-servicedelivery	1	Poor		-1.0	red
-servicedelivery	2	Average		0.0	yellow
-servicedelivery	3	Good		1.0	green
-servicedelivery	4	Don't Know		888.0	grey
+servicedelivery	1	Poor		-1	red
+servicedelivery	2	Average		0	yellow
+servicedelivery	3	Good		1	green
+servicedelivery	4	Don't Know		888	grey
 noserviceaccess	1	Don't know			
 noserviceaccess	2	All the same			
 noserviceaccess	3	Urban poor			
@@ -813,12 +813,21 @@ relationship2	7	Other
 yesnofrrent	1	Yes			
 yesnofrrent	2	No			
 yesnofrrent	3	Don't pay rent			
-					
 ccorfield	callcenter	Call Center			
 ccorfield	field	Physically in the field			
-					
-					
 phonecallstatus	1	Phone not ringing			
 phonecallstatus	2	Phone ringing but not answered.			
 phonecallstatus	3	Respondent answered but refused the interview			
 phonecallstatus	4	Respondent answered and accepted the interview			
+doctenure		Yes		1	green
+doctenure		No		0	red
+FCS		Acceptable		1	green
+FCS		Borderline		0	yellow
+FCS		Poor		-1	red
+needs		Yes		1	green
+needs		No		0	red
+needs		Don't know		888	grey
+treat		No		0	red
+treat		Yes		1	green
+watersource_functional		No		0	red
+watersource_functional		Yes		1	green

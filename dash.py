@@ -27,6 +27,10 @@ st.set_page_config(layout="wide")
 @st.cache
 def load_data():
 	data = pd.read_csv('viz.csv',sep='\t')
+	data['damagelevel']=data['damagelevel'].apply(lambda x:'No damage' if x=='0' else x)
+	data['last_nfi']=data['last_nfi'].apply(lambda x:'Never received' if x=='0' else x)
+	data['treatment']=data['treatment'].apply(lambda x:'No treatment' if x=='0' else x)
+	
 	correl=pd.read_csv('graphs.csv',sep='\t')
 	questions=pd.read_csv('questions.csv',sep='\t')
 	questions.drop([i for i in questions.columns if 'Unnamed' in i],axis=1,inplace=True)
@@ -236,23 +240,32 @@ def main():
 	st.sidebar.image(img1,width=200)
 	st.sidebar.title("")
 	st.sidebar.title("")
-	topic = st.sidebar.radio('What do you want to do ?',('Display geolocalization correlations','Display prices correlations','Display Districts correlations','Display Other correlations','Display Sankey diagrams'))
+	topic = st.sidebar.radio('What do you want to do ?',('Display geolocalization correlations','Display prices correlations','Display Districts correlations','Display Education correlations','Display Other correlations','Display Sankey diagrams'))
 	
 	title1, title3 = st.columns([9,2])
 	title3.image(img2)
 	
-	if topic=='Display prices correlations':
-		title1.title('Correlations related to cost of living per district')
-		st.markdown("""---""")	
-		st.subheader('Cost of living and incomes are very much different from one district to another as we can see below:')
-		st.markdown("""---""")	
-		quest=correl[correl['topic']=='price']
+	if topic in ['Display prices correlations','Display Districts correlations']:
+	
+		if topic == 'Display prices correlations':
+			title1.title('Correlations related to cost of living per district')
+			st.markdown("""---""")	
+			st.subheader('Cost of living and incomes are very much different from one district to another as we can see below:')
+			st.markdown("""---""")	
+			quest=correl[correl['topic']=='price']
+		else: 
+			title1.title('Correlations related to Districts (Not counting prices and incomes)')
+			st.markdown("""---""")	
+			st.subheader('On some aspects some districts are very different from the others:')
+			st.markdown("""---""")	
+			quest=correl[correl['topic']=='dist']
+					
 				
 		df=data[['district']+quest['variable_y'].unique().tolist()]
 		
 		for i in range(len(quest['variable_y'].unique())):
 			
-			if quest.iloc[i]['variable_y']!='pricechange3months':
+			if quest.iloc[i]['graphtype']=='violin':
 				districts = df['district'].unique().tolist()
 				fig=go.Figure()
 				for district in districts:
@@ -274,60 +287,18 @@ def main():
 
 				fig1=count2(quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y'],\
 				df,legendtitle=quest.iloc[i]['legendtitle'],xaxis=quest.iloc[i]['xtitle'])
-					
+				fig1.update_layout(title_text=quest.iloc[i]['legendtitle'],font=dict(size=12),showlegend=False)	
 				col1.plotly_chart(fig1,use_container_width=True)
 						
 				fig2=pourcent2(quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y'],\
-				df,legendtitle=quest.iloc[i]['legendtitle'],xaxis=quest.iloc[i]['xtitle'])
-				#fig2.update_layout(title_text=quest.iloc[i]['title'],font=dict(size=20),showlegend=True,xaxis_tickangle=45)
+				df,legendtitle='',xaxis=quest.iloc[i]['xtitle'])
+				fig1.update_layout(title_text=quest.iloc[i]['title'],font=dict(size=20),showlegend=True,xaxis_tickangle=45)
 				col2.plotly_chart(fig2,use_container_width=True)
 				st.write(quest.iloc[i]['description'])
 				#st.write(df)		
 			st.markdown("""---""")	
 	
-	elif topic=='Display Districts correlations':
-		title1.title('Correlations related to Districts (Not counting prices and incomes)')
-		
-		st.markdown("""---""")	
-		
-		quest=correl[correl['topic']=='dist']
-				
-		df=data[['district']+quest['variable_y'].unique().tolist()]
-		
-		for i in range(len(quest['variable_y'].unique())):
-			
-			if quest.iloc[i]['variable_y'] in ['CSI','duration']:
-				districts = df['district'].unique().tolist()
-				fig=go.Figure()
-				for district in districts:
-					
-					fig.add_trace(go.Violin(x=df['district'][df['district'] == district],
-	                            		y=df[quest.iloc[i]['variable_y']][df['district'] == district],
-	                            		name=district,
-	                            		box_visible=True,
-                           			meanline_visible=True,points="all",))
-				fig.update_layout(showlegend=False)
-				fig.update_yaxes(range=[-0.1, quest.iloc[i]['max']],title=quest.iloc[i]['ytitle'])
-				st.subheader(quest.iloc[i]['title'])
-				st.plotly_chart(fig,use_container_width=True)
-				st.write(quest.iloc[i]['description'])	
-			else:
-				st.subheader(quest.iloc[i]['title'])
-				
-				col1,col2=st.columns([1,1])
-
-				fig1=count2(quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y'],\
-				df,legendtitle=quest.iloc[i]['legendtitle'],xaxis=quest.iloc[i]['xtitle'])
-					
-				col1.plotly_chart(fig1,use_container_width=True)
-						
-				fig2=pourcent2(quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y'],\
-				df,legendtitle=quest.iloc[i]['legendtitle'],xaxis=quest.iloc[i]['xtitle'])
-				#fig2.update_layout(title_text=quest.iloc[i]['title'],font=dict(size=20),showlegend=True,xaxis_tickangle=45)
-				col2.plotly_chart(fig2,use_container_width=True)
-				st.write(quest.iloc[i]['description'])
-				#st.write(df)		
-			st.markdown("""---""")	
+	
 	
 	
 	elif topic=='Display maps':
