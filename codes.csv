@@ -831,3 +831,7 @@ treat		No		0	red
 treat		Yes		1	green
 watersource_functional		No		0	red
 watersource_functional		Yes		1	green
+comm_safety		No		0	red
+comm_safety		Yes		1	green
+maleteachers		No		0	red
+maleteachers		Yes		1	green

@@ -227,7 +227,7 @@ cat_cols=pickle.load( open( "cat_cols.p", "rb" ) )
 dummy_cols=pickle.load( open( "dummy.p", "rb" ) )	
 questions.set_index('Idquest',inplace=True)
 correl=pd.read_csv('graphs.csv',sep='\t')
-#st.write(questions)
+
 text=[i for i in questions.columns if questions[i]['Treatment']=='text']
 text2=[questions[i]['question'] for i in text if 'recomm' not in i]+['Recommandation progamming','Recommandation activities'] 
 #st.write(text)
@@ -236,11 +236,11 @@ img1 = Image.open("logoAxiom.png")
 img2 = Image.open("logoNRC.png")
 
 def main():	
-	
+	cat_cols=pickle.load( open( "cat_cols.p", "rb" ) )
 	st.sidebar.image(img1,width=200)
 	st.sidebar.title("")
 	st.sidebar.title("")
-	topic = st.sidebar.radio('What do you want to do ?',('Display geolocalization correlations','Display prices correlations','Display Districts correlations','Display Education correlations','Display Other correlations','Display Sankey diagrams'))
+	topic = st.sidebar.radio('What do you want to do ?',('Display geolocalization correlations','Display prices correlations','Display Districts correlations','Display Education correlations','Display CSI or FCS correlations','Display Security correlations','Display Other correlations','Display Sankey diagrams'))
 	
 	title1, title3 = st.columns([9,2])
 	title3.image(img2)
@@ -261,7 +261,7 @@ def main():
 			quest=correl[correl['topic']=='dist']
 					
 				
-		df=data[['district']+quest['variable_y'].unique().tolist()]
+		df=data[['district']+quest['variable_y'].unique().tolist()].copy()
 		
 		for i in range(len(quest['variable_y'].unique())):
 			
@@ -280,7 +280,155 @@ def main():
 				st.subheader(quest.iloc[i]['title'])
 				st.plotly_chart(fig,use_container_width=True)
 				st.write(quest.iloc[i]['description'])	
-			else:
+			elif quest.iloc[i]['graphtype']=='bar':
+				st.subheader(quest.iloc[i]['title'])
+				
+				col1,col2=st.columns([1,1])
+
+				fig1=count2(quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y'],\
+				df,legendtitle=quest.iloc[i]['legendtitle'],xaxis=quest.iloc[i]['xtitle'])
+				fig1.update_layout(title_text=quest.iloc[i]['legendtitle'],font=dict(size=12),showlegend=False)	
+				col1.plotly_chart(fig1,use_container_width=True)
+						
+				fig2=pourcent2(quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y'],\
+				df,legendtitle='',xaxis=quest.iloc[i]['xtitle'])
+				fig1.update_layout(title_text=quest.iloc[i]['title'],font=dict(size=20),showlegend=True,xaxis_tickangle=45)
+				col2.plotly_chart(fig2,use_container_width=True)
+				st.write(quest.iloc[i]['description'])
+			
+				
+			st.markdown("""---""")	
+	
+	elif topic in ['Display Education correlations','Display CSI or FCS correlations','Display Security correlations','Display Other correlations']:
+		#st.write(cat_cols)
+		if topic == 'Display Education correlations':
+			title1.title('Correlations related to education')
+			st.markdown("""---""")	
+			
+			quest=correl[correl['topic']=='educ']
+		elif topic=='Display CSI or FCS correlations': 
+			title1.title('Correlations related to food security scores (FCS or CSI)')
+			st.markdown("""---""")	
+			st.subheader('On some aspects some districts are very different from the others:')
+			st.markdown("""---""")	
+			quest=correl[correl['topic']=='CSI']
+		elif topic=='Display Security correlations': 
+			title1.title('Correlations related to security related questions')
+			st.markdown("""---""")	
+			st.subheader('On some aspects some districts are very different from the others:')
+			st.markdown("""---""")	
+			quest=correl[correl['topic']=='secu']
+		else:
+			title1.title('Other correlations')
+			st.markdown("""---""")	
+			st.subheader('On some aspects some districts are very different from the others:')
+			st.markdown("""---""")	
+			quest=correl[correl['topic']=='other']
+		
+		for i in range(len(quest)):
+			
+			if quest['variable_x'].iloc[i] in cat_cols and quest['variable_y'].iloc[i] in cat_cols:
+				q1=quest['variable_x'].iloc[i]
+				q2=quest['variable_y'].iloc[i]
+				df=pd.DataFrame(columns=[q1,q2])
+				quests1=[feat for feat in data.columns if q1 in feat[:len(q1)]]
+				catq1=[' '.join(feat.split(' ')[1:]) for feat in quests1]
+		
+				#st.write(quests1)
+				quests2=[feat for feat in data.columns if q2 in feat[:len(q2)]]
+				catq2=[' '.join(feat.split(' ')[1:]) for feat in quests2]
+				#st.write(quests2)
+				#st.write(dfm[quests1+quests2])
+				for feat1 in range(len(quests1)):
+					for feat2 in range(len(quests2)):       
+						ds=data[[quests1[feat1],quests2[feat2]]].copy()
+						ds=ds[ds[quests1[feat1]]==1]
+						ds=ds[ds[quests2[feat2]]==1]
+						#st.write(ds)      
+						ds[q1]=ds[quests1[feat1]].apply(lambda x: catq1[feat1])
+						ds[q2]=ds[quests2[feat2]].apply(lambda x: catq2[feat2])
+						#st.write(ds)
+						df=df.append(ds[[q1,q2]])
+				#st.write(df)
+			
+			elif quest['variable_x'].iloc[i] in cat_cols or quest['variable_y'].iloc[i] in cat_cols:
+				if quest['variable_x'].iloc[i] in cat_cols:
+				#st.write(cat_cols)
+					cat,autre=quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y']
+				else:
+					cat,autre=quest.iloc[i]['variable_y'],quest.iloc[i]['variable_x']
+				df=pd.DataFrame(columns=[cat,autre])
+					
+				
+				catcols=[j for j in data.columns if cat in j[:len(cat)]]
+				cats=[' '.join(i.split(' ')[1:])[:57] for i in catcols]
+				
+				#st.write(cats)
+				#st.write(catcols)
+				
+				for n in range(len(catcols)):
+					ds=data[[catcols[n],autre]].copy()
+					ds=ds[ds[catcols[n]]==1]
+					ds[catcols[n]]=ds[catcols[n]].apply(lambda x: cats[n])
+					ds.columns=[cat,autre]
+					df=df.append(ds)
+							
+			else: 
+				df=data[[quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y']]].copy()
+			
+			
+			if quest.iloc[i]['graphtype']=='violin':
+				if quest.iloc[i]['max']==quest.iloc[i]['max']:
+					maximum=quest.iloc[i]['max']
+				else:
+					maximum=df[quest.iloc[i]['variable_y']].max()*1.1
+									
+				abscisses = df[quest.iloc[i]['variable_x']].unique().tolist()
+				fig=go.Figure()
+				for abscisse in abscisses:
+					
+					fig.add_trace(go.Violin(x=df[quest.iloc[i]['variable_x']][df[quest.iloc[i]['variable_x']] == abscisse],
+	                            		y=df[quest.iloc[i]['variable_y']][df[quest.iloc[i]['variable_x']] == abscisse],
+	                            		name=abscisse,
+	                            		box_visible=True,
+                           			meanline_visible=True,points="all",))
+				fig.update_layout(showlegend=False)
+				fig.update_yaxes(range=[-0.1, maximum],title=quest.iloc[i]['ytitle'])
+				st.subheader(quest.iloc[i]['title'])
+				st.plotly_chart(fig,use_container_width=True)
+				st.write(quest.iloc[i]['description'])	
+			
+			elif quest.iloc[i]['graphtype']=='violin2':
+				#st.write(quest.iloc[i]['variable_y2'])
+				df2=data[[quest.iloc[i]['variable_x2'],quest.iloc[i]['variable_y2']]].copy()
+				df['Sex']=np.full(len(df),'Boys')
+				df2['Sex']=np.full(len(df2),'Girls')
+			
+				
+				fig = go.Figure()
+				
+				fig.add_trace(go.Box(
+    				y=df[quest.iloc[i]['variable_y']],
+    				x=df[quest.iloc[i]['variable_x']],
+    				name='Boys',
+    				marker_color='blue'
+				))
+				fig.add_trace(go.Box(
+   				y=df2[quest.iloc[i]['variable_y2']],
+    				x=df2[quest.iloc[i]['variable_x2']],
+    				name='Girls',
+    				marker_color='pink'
+				))
+				fig.update_layout(
+   				 yaxis_title=quest.iloc[i]['ytitle'],
+    				boxmode='group' # group together boxes of the different traces for each value of x
+				)
+				st.subheader(quest.iloc[i]['title'])
+				st.plotly_chart(fig,use_container_width=True)
+				st.write(quest.iloc[i]['description'])
+			
+			elif quest.iloc[i]['graphtype']=='bar':
+				#st.write(df)
 				st.subheader(quest.iloc[i]['title'])
 				
 				col1,col2=st.columns([1,1])
@@ -296,10 +444,20 @@ def main():
 				col2.plotly_chart(fig2,use_container_width=True)
 				st.write(quest.iloc[i]['description'])
 				#st.write(df)		
+			
+			elif quest.iloc[i]['graphtype']=='treemap':
+				
+				df['persons']=np.ones(len(df))
+				st.subheader(quest.iloc[i]['title'])
+				fig=px.treemap(df, path=[quest.iloc[i]['variable_x'], quest.iloc[i]['variable_y']], values='persons',color=quest.iloc[i]['variable_y'])
+				#fig.update_layout(title_text=quest.iloc[i]['title'],font=dict(size=20))
+					
+				st.plotly_chart(fig,use_container_width=True)
+				st.write(quest.iloc[i]['description'])
+				#st.write(df)	
+			
 			st.markdown("""---""")	
-	
-	
-	
+		
 	
 	elif topic=='Display maps':
 		
