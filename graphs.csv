@@ -1,19 +1,18 @@
 variable_x	variable_y	variable_x2	variable_y2	description	xtitle	ytitle	xtitle2	ytitle2	legendtitle	title	graphtype	topic		max	min	
-district	doing3months			They are quite a lot in Adado							bar	CSI				
-doing3months	CSI			Those who answered Other are particularly vulnerable according to CSI							violin	CSI				
-FCS	CSI										violin	CSI				
-gender HHH	FCS										bar	CSI				
-incomeactivities 	FCS										bar	CSI				
-livingduration	FCS										bar	CSI				
-payments	FCS			hability to mett all the household needs does not impact on the FCS							bar	CSI				
-reasons 	FCS										bar	CSI				
-region	CSI										violin	CSI				
-regularexpence1	CSI			Those for which Medicine and health is the largest expense are more vulnerable in regards to CSI							violin	CSI				
-security_patrol	FCS										bar	CSI				
-sheltermaterial 	FCS										bar	CSI				
+doing3months	CSI			Those who answered « Other » are particularly vulnerable according to CSI	In trying to meet all the needs of your household, what have you had to do in the past 3 months?	CSI index				CSI index per action to meet family needs	violin	CSI				
+district	doing3months			They are particularly many in Adaado	District				In trying to meet all the needs of your household, what have you had to do in the past 3 months?	Action to meet family needs per district	bar	CSI				
+FCS	CSI			CSI index and FCS categories are not correlated	FCS category	CSI index				CSI index distribution per FCS category	violin	CSI				
+gender HHH	FCS			Women headed households are more likely to have a poor FCS	Gender of the head of the household				FCS category	FCS category per gender of the head of the household	bar	CSI				
+incomeactivities 	FCS			Appart from people who do not have income and who are clearly more vulnerables, there is no big difference from one income generating activity to another.	Income generating activities within the last 30 days				FCS category	FCS category per income generating activities	bar	CSI				
+livingduration	FCS			It seems that those who have been displaced recently have more difficulties.	How long have you  lived in this village/settlement/Location?				FCS category	FCS category according to how long people have lived in their settlement	bar	CSI				
+payments	FCS			Hability to meet all the household needs does have much impact on the FCS	Can you pay for all your household needs (such as food, water, rent, transport, education and health) with the income made?				FCS category	FCS category according to ability to pay for all family needs	bar	CSI				
+reasons 	FCS			Having access to enough water tends to improve the FCS	Why don't you  have enough access to water?				FCS category	FCS category per reason for not having access to water	bar	CSI				
+region	CSI			CSI index is significantly higher in South Central and Jubaland	Region	CSI index				Distribution of CSI index per region	violin	CSI				
+regularexpence1	CSI			Those for which Medicine and health is the largest expense are more vulnerable in regards to CSI	Thinking about all your regular household expenses, what is your largest expense?	CSI index				Distribution of CSI index per main expense	violin	CSI				
+security_patrol	FCS			Security patrol seems to have a good impact on FCS	Are there any  law  enforcers / security personnel patrolling this area?				FCS category	FCS categories according to presence of security patrol	bar	CSI				
 targetlocation	FCS			Some target location seem particularly vulnerable in regards to FCS	Target location				FSC category	FCS per target location	bar	CSI				add wordcloud with reasons
-FCS	totalhhsize			the size of the household does not have much impact on the FCS							violin	CSI				
-whydifficult 	FCS			maybe…							bar	CSI				
+FCS	totalhhsize			the size of the household does not have much impact on the FCS	FCS category	Size of the household				Distribution of the size of the household per FCS category	violin	CSI				
+whydifficult 	FCS			On this we lack of data for some categories. But it seems that not accessing some very important document can deteriorate the FCS.	In your opinion, is it easy or diﬃcult to access the documents you need? Why ?				FCS category	FCS category per reason for having difficulty to access the needed documents	bar	CSI				
 district	residence			The status of interviewed people is very different from one place to another which could explain also some of the difference that comes out of each districts.	District				What is your residence status?	Residence status per district	bar	dist				
 district	watersource_functional			Most problematic districts are Garowe and Bossasso	District				Is your  water source functional regularly?	Usability of the watersource per district	bar	dist				
 district	CSI			Adaado inhabitants for example seem particularly vunerables.		CSI index				CSI index distribution per district	violin	dist		60		
@@ -33,7 +32,7 @@ district	treatment			The type of treatments varies also pretty much from one pla
 district	covid			Laascanod Puntland seems to have had much more cases of COVID	District				Did anyone in your household suffer from COVID 19 ?	COVID cases per district	bar	dist				
 district	jobloss			We see that more people have lost jobs due to COVID thant those who said they has cases in their household. And while there are over 20 % in some district in other almost nobody was affected by this.	District				Did you  or anyone in your  household loss employment or income means due to COVID-19 crisis?	Loss of employement due to COVID per district	bar	dist				
 district	difficultyhh			Those who did not answer « unable to work » are located in few districts and are mainly from south centrla and jubaland	District	need wordclouds					bar		filter districts			
-boys12to17	schooled_boys2_%	girls12to17	schooled_girls2_%	The more there are boys at school the less likely they are scholarized which is not the same for girls probably because they are less likely to be scholarized	Number of boys (or girls) of this age in the household	Pourcentage of 12-17 children going to school				Distribution of pourcentage of boys and girls (12-17) going to school per number of boys in the household	violin2	educ				
+boys12to17	schooled_boys2_%	girls12to17	schooled_girls2_%	The more there are boys at school the less likely they are scholarized which is not the same for girls probably because they are less likely to be scholarized (When we look at the median)	Number of boys (or girls) of this age in the household	Pourcentage of 12-17 children going to school				Distribution of pourcentage of boys and girls (12-17) going to school per number of boys in the household	violin2	educ				
 boys6to11	schooled_boys_%	girls6to11	schooled_girls_%	This is as true for children between 6 and 11 as well as between 12 and 17	Number of boys (or girls) of this age in the household	Pourcentage of 6-11 children going to school				Distribution of pourcentage of boys and girls (6-11) going to school per number of boys in the household	violin2	educ				
 incomeactivities 	schooled_girls_%			We can see that the proportion of girls going to school varies very much from one activity of the parents to another	Income generating activities within the last 30 days	Pourcentage of 6-11 girls going to school				Distribution of pourcentage of younger girls going to school per income generating activities over the last 30 days	violin	educ				
 children_affected2 	CSI			Family whose affected children were in primary have a lower CSI index	What  is the education level of the children aﬀected?	CSI index				CSI index distribution per education level of children affected	violin	educ				
