@@ -47,9 +47,8 @@ district	medical			For medical expenses we can see also some differences from on
 district	schooling			School seems also quite expensive in Lascanood Puntland despite not so high incomes.		Expenses on education				Distribution of expenses on education per district	violin	price		150		
 district	travel			Cost of travel seem high in Zaylac and Badhan		Expenses on travel for food				Distribution of expenses on travel for food per district	violin	price		200		
 district	water			Water seem particularly expensive in Badan		Expenses on water				Distribution of expenses on water per district	violin	price		150		
-comm_dangers 	duration										violin	secu		200		
-comm_dangers 	plan										bar	secu				
-comm_safety	lockable										bar	secu				
+comm_dangers 	duration			In area with conflict issues time for collecting water is higher	What  are the dangers to safety in this community?	time in minutes				Distribution of time to water point and return per dangers in the community	violin	secu		200		
+comm_safety	lockable			When the shelter is lockable people seems to feel safer	Do you  feel safe living in this community?				Is the shelter lockable?	Feeling of safety depending of whether the shelter is lockable	bar	secu				
 commoneviction	feelingsafty 										treemap	secu				
 commoneviction	safety										bar	secu				
 commoneviction	security										bar	secu				
@@ -82,21 +81,3 @@ shelter_satisfied	cookingplace										bar	other
 shelter_satisfied	lockable			the fact to be lockable and have a cooking place is a good point for shelter							bar	other				
 theft	waterconsumed										violin	other				
 watersource 	duration			For some watersource it takes much more time to collect water							violin	other				
-																
-																
-											map		select			
-																
-											map		select			
-											map		select			
-											map		select			
-											map		select			
-											map		select			
-				Risk of violence seem to be very much localized							map		select			
-											map		select			
-											map		select			
-											map		select			
-											map		need to include also cantaccessshop			
-											map		select			
-											map					
-											map		select			
-											map		select			
