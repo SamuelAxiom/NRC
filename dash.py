@@ -30,7 +30,8 @@ def load_data():
 	data['damagelevel']=data['damagelevel'].apply(lambda x:'No damage' if x=='0' else x)
 	data['last_nfi']=data['last_nfi'].apply(lambda x:'Never received' if x=='0' else x)
 	data['treatment']=data['treatment'].apply(lambda x:'No treatment' if x=='0' else x)
-	
+	for i in ['challenge_1','challenge_2','challenge_3']:
+		data[i]=data[i].apply(lambda x: x if data[i].value_counts()[x]>24 else 'Other')
 	correl=pd.read_csv('graphs.csv',sep='\t')
 	questions=pd.read_csv('questions.csv',sep='\t')
 	questions.drop([i for i in questions.columns if 'Unnamed' in i],axis=1,inplace=True)
@@ -44,13 +45,15 @@ data,correl,questions,codes=load_data()
 #st.write(data.columns)
 #st.write(correl.shape)
 
+@st.cache
 def sankey_graph(data,L,height=600,width=1600):
     """ sankey graph de data pour les catégories dans L dans l'ordre et 
     de hauter et longueur définie éventuellement"""
     
-    nodes_colors=["blue","green","grey",'yellow',"coral",'darkviolet','saddlebrown','darkblue','brown']
-    link_colors=["lightblue","limegreen","lightgrey","lightyellow","lightcoral",'plum','sandybrown','lightsteelblue','rosybrown']
-    
+    nodes_colors=['#c6dbef','#e6550d','#fd8d3c','#fdae6b','#fdd0a2','#31a354','#74c476','#a1d99b','#c7e9c0','#756bb1','#9e9ac8',\
+    		'#bcbddc','#dadaeb','#636363','#969696','#bdbdbd','#d9d9d9','#3182bd','#6baed6','#9ecae1','#c6dbef','#e6550d']
+    link_colors=['#c6dbef','#e6550d','#fd8d3c','#fdae6b','#fdd0a2','#31a354','#74c476','#a1d99b','#c7e9c0','#756bb1','#9e9ac8',\
+    		'#bcbddc','#dadaeb','#636363','#969696','#bdbdbd','#d9d9d9','#3182bd','#6baed6','#9ecae1','#c6dbef','#e6550d']
     
     labels=[]
     source=[]
@@ -240,7 +243,7 @@ def main():
 	st.sidebar.image(img1,width=200)
 	st.sidebar.title("")
 	st.sidebar.title("")
-	topic = st.sidebar.radio('What do you want to do ?',('Display geolocalization correlations','Display prices correlations','Display Districts correlations','Display Education correlations','Display CSI or FCS correlations','Display Security correlations','Display Other correlations','Display Sankey diagrams'))
+	topic = st.sidebar.radio('What do you want to do ?',('Mapping apps','Display prices correlations','Display Districts correlations','Display Education correlations','Display CSI or FCS correlations','Display Security correlations','Display Other correlations','Display Sankey diagrams'))
 	
 	title1, title3 = st.columns([9,2])
 	title3.image(img2)
@@ -456,7 +459,7 @@ def main():
 			st.markdown("""---""")	
 		
 	
-	elif topic=='Display maps':
+	elif topic=='Mapping apps++':
 		
 		continues=pickle.load( open( "cont_feat.p", "rb" ) )
 		cat_cols=pickle.load( open( "cat_cols.p", "rb" ) )
@@ -636,182 +639,56 @@ def main():
 				st.plotly_chart(fig,use_container_width=True,height=300)
 				
 		
-	elif topic=='Display correlations':	
-		
-		title1.title('Main correlations uncovered from the database')
-		continues=pickle.load( open( "cont_feat.p", "rb" ) )
-		cat_cols=pickle.load( open( "cat_cols.p", "rb" ) )
-		
-				
-		quests=correl[correl['variable_x'].fillna('').apply(lambda x: True if 'region' not in x else False)]
-		
-		#st.write(quest)
-		#st.write(codes)
-		#st.write(cat_cols)
-		
-		#st.write(data['assistancetype'].value_counts())
-		
-			
-							
-		for i in quests['variable_x'].unique():
-			
-			k=0
-			st.markdown("""---""")		
-			
-			quest=quests[quests['variable_x']==i]
-			
-			#st.write(quest)
-			
-			if len(quest)>1 or 'bar' in quest['graphtype'].unique():
-				col1,col2=st.columns([1,1])
-			
-			for i in range(len(quest)):
-				
-				
-				
-				#st.write(quest.iloc[i]['variable_x']+'##')
-				#st.write('in cat cols: ',quest.iloc[i]['variable_x'] in cat_cols)
-				
-			
-								
-			
-				if quest.iloc[i]['variable_x'] in cat_cols or quest.iloc[i]['variable_y'] in cat_cols:
-					
-					if quest.iloc[i]['variable_x'] in cat_cols:
-						cat,autre=quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y']
-					else:
-						cat,autre=quest.iloc[i]['variable_y'],quest.iloc[i]['variable_x']
-					#st.write('cat: ',cat,' et autre: ',autre)
-						
-					df=pd.DataFrame(columns=[cat,autre])
-					
-					catcols=[j for j in data.columns if cat in j]
-					cats=[' '.join(i.split(' ')[1:])[:57] for i in catcols]
-				
-					for n in range(len(catcols)):
-						ds=data[[catcols[n],autre]].copy()
-						ds=ds[ds[catcols[n]]==1]
-						ds[catcols[n]]=ds[catcols[n]].apply(lambda x: cats[n])
-						ds.columns=[cat,autre]
-						df=df.append(ds)
-					df['persons']=np.ones(len(df))		
-					#st.write(df)		
-					
-					#st.write(quest.iloc[i]['graphtype'])
-						
-									
-				else:	
-					df=data[[quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y']]].copy()
-					df['persons']=np.ones(len(df))
-				
-				if quest.iloc[i]['graphtype']=='sunburst':
-					st.subheader(quest.iloc[i]['title'])
-					fig = px.sunburst(df.fillna(''), path=[quest.iloc[i]['variable_x'], quest.iloc[i]['variable_y']], 	values='persons',color=quest.iloc[i]['variable_y'])
-					#fig.update_layout(title_text=quest.iloc[i]['variable_x'] + ' and ' +quest.iloc[i]['variable_y'],font=dict(size=20))
-					st.plotly_chart(fig,size=1000)
-					
-					
-					
-				
-				elif quest.iloc[i]['graphtype']=='treemap':
-					
-					st.subheader(quest.iloc[i]['title'])
-					fig=px.treemap(df, path=[quest.iloc[i]['variable_x'], quest.iloc[i]['variable_y']], values='persons')
-					#fig.update_layout(title_text=quest.iloc[i]['title'],font=dict(size=20))
-					
-					st.plotly_chart(fig,use_container_width=True)
-					st.write(quest.iloc[i]['description'])
-					
-				
-					
-				elif quest.iloc[i]['graphtype']=='violin':
-					
-					
-					
-					fig = go.Figure()
-				
-					if quest.iloc[i]['variable_x'].split(' ')[0] in codes['list name'].unique():
-						categs = codes[codes['list name']==quest.iloc[i]['variable_x'].split(' ')[0]].sort_values(by='coding')['label'].tolist()				
-					
-					else:
-						categs = df[quest.iloc[i]['variable_x']].unique()
-					for categ in categs:
-					    fig.add_trace(go.Violin(x=df[quest.iloc[i]['variable_x']][df[quest.iloc[i]['variable_x']] == categ],
-	                            		y=df[quest.iloc[i]['variable_y']][df[quest.iloc[i]['variable_x']] == categ],
-	                            		name=categ,
-	                            		box_visible=True,
-                           			meanline_visible=True,points="all",))
-					fig.update_layout(showlegend=False)
-					fig.update_yaxes(range=[-0.1, df[quest.iloc[i]['variable_y']].max()+1],title=quest.iloc[i]['ytitle'])
-					k+=1
-					
-					if len(quest[quest['graphtype']=='violin'])==2:
-						
-						if k==1:
-							col1.subheader(quest.iloc[i]['title'])
-							col1.plotly_chart(fig,use_container_width=True)
-							col1.write(quest.iloc[i]['description'])
-						else:
-							col2.subheader(quest.iloc[i]['title'])
-							col2.plotly_chart(fig,use_container_width=True)
-							col2.write(quest.iloc[i]['description'])
-					else:
-						st.subheader(quest.iloc[i]['title'])
-						st.plotly_chart(fig,use_container_width=True)
-						st.write(quest.iloc[i]['description'])
-					
-									
-				elif quest.iloc[i]['graphtype']=='bar':
-					
-					st.subheader(quest.iloc[i]['title'])
-				
-					col1,col2=st.columns([1,1])
-
-					fig1=count2(quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y'],\
-					df,legendtitle=quest.iloc[i]['legendtitle'],xaxis=quest.iloc[i]['xtitle'])
-					
-					col1.plotly_chart(fig1,use_container_width=True)
-						
-					fig2=pourcent2(quest.iloc[i]['variable_x'],quest.iloc[i]['variable_y'],\
-					df,legendtitle=quest.iloc[i]['legendtitle'],xaxis=quest.iloc[i]['xtitle'])
-					#fig2.update_layout(title_text=quest.iloc[i]['title'],font=dict(size=20),showlegend=True,xaxis_tickangle=45)
-					col2.plotly_chart(fig2,use_container_width=True)
-					st.write(quest.iloc[i]['description'])
-					#st.write(df)
-						
+	
 	
 			
-	elif topic=='Display Sankey Graphs':
+	elif topic=='Display Sankey diagrams':
 	
 		title1.title('Sankey Diagrams')
 		st.title('')
-		sankey=[i for i in data.columns if data[i].dtype=='object' and i!='nan']
+		sanks=[i for i in data.columns if data[i].dtype=='object' if 'Unnamed' not in i and len(data[i].unique())<20]
 		
+		#st.write(questions)
 		
-		sank=data[sankey].fillna('Unknown').copy()
+		sank=data[sanks].fillna('Unknown').copy()
 		
 		sank['ones']=np.ones(len(sank))
 		
-		st.title('Main needs identified')
+		st.markdown("""---""")
 		
-		fig=sankey_graph(sank,['main_need','second_need','third_need'],height=600,width=1500)
+		st.title('Main expenses')
+		
+		fig=sankey_graph(sank,['regularexpence1','regularexpence2','regularexpence3'],height=1200,width=1500)
 		fig.update_layout(plot_bgcolor='black', paper_bgcolor='grey', width=1500)
 		
-		st.write(' - '.join(['Main need','Second main need','Third main need']))
+		st.write(' - '.join(['Main expense','Second main expense','Third main expense']))
 		st.plotly_chart(fig,use_container_width=True)
 		
+		st.markdown("""---""")
 		
+		
+		fig=sankey_graph(sank,['challenge_1','challenge_2','challenge_3'],height=1200,width=1500)
+		fig.update_layout(plot_bgcolor='black', paper_bgcolor='grey', width=1500)
+		
+		st.write(' - '.join(['Main challenge','Second main challenge','Third main challenge']))
+		st.plotly_chart(fig,use_container_width=True)
+
+		st.markdown("""---""")
+		
+		st.write('Both for expenses and challenges we find on top Food, Water and health which are most of the time mentionned together')
+		
+		st.markdown("""---""")
 		
 		if st.checkbox('Design my own Sankey Graph'):
 			
 			st.markdown("""---""")
 			selection=st.multiselect('Select features you want to see in the order you want them to appear',\
-			 [questions[i] for i in sank.columns if i!='ones'])
-			feats=[i for i in questions if questions[i] in selection]
+			 [questions[i]['question'] for i in sank if i!='ones'])
+			feats=[i for i in questions if questions[i]['question'] in selection]
 			
 			if len(feats)>=2:
 				st.write(' - '.join(selection))
-				fig3=sankey_graph(sank,feats,height=600,width=1500)
+				fig3=sankey_graph(sank,feats,height=1200,width=1500)
 				fig3.update_layout(plot_bgcolor='black', paper_bgcolor='grey', width=1500)
 				st.plotly_chart(fig3,use_container_width=True)	
 		
