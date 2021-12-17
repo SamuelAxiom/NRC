@@ -11,6 +11,7 @@ import pydeck as pdk
 import re
 from collections import Counter
 from PIL import Image
+from math import exp
 
 #import variables
 
@@ -223,6 +224,7 @@ def pourcent2(abscisse,ordonnée,dataf,legendtitle='',xaxis=''):
 
 
 questions=pd.read_csv('questions.csv',sep='\t')
+correlations=pd.read_csv('correlations.csv',sep='\t')
 questions=questions[[i for i in questions.columns if 'Unnamed' not in i]]
 codes=pd.read_csv('codes.csv',index_col=None,sep='\t').dropna(how='any',subset=['color'])
 continues=pickle.load( open( "cont_feat.p", "rb" ) )
@@ -230,6 +232,7 @@ cat_cols=pickle.load( open( "cat_cols.p", "rb" ) )
 dummy_cols=pickle.load( open( "dummy.p", "rb" ) )	
 questions.set_index('Idquest',inplace=True)
 correl=pd.read_csv('graphs.csv',sep='\t')
+
 
 text=[i for i in questions.columns if questions[i]['Treatment']=='text']
 text2=[questions[i]['question'] for i in text if 'recomm' not in i]+['Recommandation progamming','Recommandation activities'] 
@@ -459,188 +462,180 @@ def main():
 			st.markdown("""---""")	
 		
 	
-	elif topic=='Mapping apps++':
+	elif topic=='Mapping apps':
+		
+		st.title('Application to visualize where the people answered what to specific questions')
+		
+		col1,col2=st.columns([1,1])
+		
+		radius=5*exp(col1.slider('Modify the size of the hexagons',5.0,10.0))
+		elevation_scale=col2.slider('Modify the heights of the hexagons',10,200)
+		
+		reference=data[['longitude','latitude']]
+		
+		#st.write(reference)
+		
+		#st.write(radius,elevation_scale,positions.shape)		
+		
+				# Define a layer to display on a map
+		layer = pdk.Layer(
+    		"HexagonLayer",
+    		reference,
+    		get_position=['longitude','latitude'],
+    		auto_highlight=True,
+    		elevation_scale=elevation_scale,
+    		pickable=True,
+    		elevation_range=[0, 2000],
+    		extruded=True,
+    		coverage=1,
+    		radius=radius,
+    		tooltip=True
+		)
+
+		# Set the viewport location
+		view_state = pdk.ViewState(
+    		longitude=44, latitude=6.56, zoom=5, min_zoom=5, max_zoom=15, pitch=40.5, bearing=7.36,
+		)
+		
+				
+		st.subheader('Positions of all the people interviewed')
+		st.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/dark-v9',\
+				initial_view_state=view_state,layers=[layer],tooltip=True))
 		
 		continues=pickle.load( open( "cont_feat.p", "rb" ) )
 		cat_cols=pickle.load( open( "cat_cols.p", "rb" ) )
-		maps=pd.read_csv('map.csv',sep='\t')
-		title1.title('Correlations uncovered from the database in relation to geographic information')
-		toshow=correl[correl['variable_x'].fillna('').apply(lambda x: True if 'region' in x else False)]
-		#st.write(data['region'].unique())
-		#st.write(maps)
-		#st.write(questions)
+		quests=pd.read_csv('questions_map.csv',sep='\t')
 		
-		for i in range(len(toshow)):
+		
+		#st.write(quests)
+		#st.write(len(cat_cols))
+		
+		L=[i for i in correlations if ('latitude'in correlations[i].tolist() or 'longitude' in correlations[i].tolist()) and (i in cat_cols or i in continues or len(data[i].unique())<20)]
+		
+		st.markdown("""---""")	
+		
+		select=st.selectbox('Select a question',[quests[i][0] for i in L])
+		selection=[i for i in quests if quests[i][0]==select][0]
+		st.subheader(select)
+		if selection in continues:
 			
-			st.title(toshow.iloc[i]['title'])
-			st.write(toshow.iloc[i]['description'])
-						
-			if toshow.iloc[i]['variable_y'] in cat_cols:
-				
-				cat,autre=toshow.iloc[i]['variable_y'],toshow.iloc[i]['variable_x']
-				df=pd.DataFrame(columns=[cat,autre])
-				
-				catcols=[j for j in data.columns if cat in j]
-				cats=[' '.join(i.split(' ')[1:])[:57] for i in catcols]
-				
-				for n in range(len(catcols)):
-					ds=data[[catcols[n],autre]].copy()
-					ds=ds[ds[catcols[n]]==1]
-					ds[catcols[n]]=ds[catcols[n]].apply(lambda x: cats[n])
-					ds.columns=[cat,autre]
-					df=df.append(ds)
-							
-			else: 
-				df=data[[toshow.iloc[i]['variable_x'],toshow.iloc[i]['variable_y']]]
+			st.markdown("""---""")	
 			
-			df['persons']=np.ones(len(df))
+			threshold=st.slider('Select a threshold you want to visualize',data[selection].min(),data[selection].max())
 			
+			col1,col2=st.columns([1,1])
 			
+			positions=data[['longitude','latitude']+[selection]]
 			
-			if toshow.iloc[i]['variable_x']=='region_origin':
-				
-				df=df[df['region_origin']!='0']
-				regions_names={"Ma'rib":'Marib','Amanat Al Asima':'Sanaa city'}
-				df['region_origin']=df['region_origin'].apply(lambda x:x if x not in regions_names else regions_names[x])
-				regions=maps[maps['admin'].isin(df['region_origin'].unique().tolist())].copy()
+			layer_lower = pdk.Layer(
+    		"HexagonLayer",
+    		positions[positions[selection]<=threshold],
+    		get_position=['longitude','latitude'],
+    		auto_highlight=True,
+    		elevation_scale=elevation_scale,
+    		pickable=True,
+    		elevation_range=[0, 2000],
+    		extruded=True,
+    		coverage=1,
+    		radius=radius,
+    		tooltip=True
+		)
+			
+			layer_higher = pdk.Layer(
+    		"HexagonLayer",
+    		positions[positions[selection]>threshold],
+    		get_position=['longitude','latitude'],
+    		auto_highlight=True,
+    		elevation_scale=elevation_scale,
+    		pickable=True,
+    		elevation_range=[0, 2000],
+    		extruded=True,
+    		coverage=1,
+    		radius=radius,
+    		tooltip=True
+		)
+
+			col1.subheader('Household interviewed with a lower value than '+str(threshold))
+			col1.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/dark-v9',\
+				initial_view_state=view_state,layers=[layer_lower],tooltip=True))
+			col2.subheader('Household interviewed with a higher value than '+str(threshold))
+			col2.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/dark-v9',\
+				initial_view_state=view_state,layers=[layer_higher],tooltip=True))
+		
+		else:
+			
+			if selection in cat_cols:
+				choices=[k[len(selection):] for k in data if selection in k[:len(selection)]]
 			else:
-				regions=maps[maps['admin'].isin(data['region'].unique().tolist())].copy()
-			#st.write(region)
+				choices=data[selection].unique().tolist()
+			final=st.multiselect('Select the answers you want to see on maps',choices)
 			
-			#st.write(df)
+			col1,col2=st.columns([1,1])
 			
-			if toshow.iloc[i]['variable_y'] not in continues:
-				
-				
-				
-				a=df.groupby([toshow.iloc[i]['variable_x'],toshow.iloc[i]['variable_y']]).aggregate({'persons':'count'}).unstack()
-						
-				#st.write(toshow.iloc[i]['variable_y']+'##')
-				
-				coding=codes[codes['list name']==toshow.iloc[i]['variable_y']].copy()
-				
-				regions_names=regions['admin'].tolist()
-				#st.write(coding)
-				#st.write(codes)
-				#st.write(regions_names)
-				region_color=[codes[codes['label']==k].iloc[0]['colorrgb'].lower() for k in regions_names]
-				regions['fill_color']=np.array(region_color)
-				
-				a=a.merge(regions,how='left',left_index=True,right_on='admin').fillna(0)
-				#st.write(a)
-				#st.write(region)
-				
-				L=[i[1] for i in a if i[0]=='persons']
-				#st.write(L)
-				colors=[coding[coding['label']==L[k]].iloc[0]['colorrgb'].lower() for k in range(len(L))]
-				labels=[coding[coding['label']==L[k]].iloc[0]['code'] for k in range(len(L))]
-				L=['_'.join(i.split(' ')) for i in L]
-				#st.write(L,colors)
-				a.columns=L+a.columns.tolist()[len(L):]
-				
-				a=a.fillna(0)
-				a['coordinates']=a['coordinates'].apply(lambda x:eval(x))
-				a['centroid']=a['centroid'].apply(lambda x:eval(x))
-				a['lat']=a['centroid'].apply(lambda x:x[0])
-				a['long']=a['centroid'].apply(lambda x:x[1])
-				
-				col1,col2=st.columns([9,5])
-				
-				#st.write(a)
+			if (selection in cat_cols) and (len(final)>0):
+				#st.write('categorical')
+				responses=[selection+k for k in final]
+				positions=data[['longitude','latitude']+responses]
+				#st.write(range(len(final)))
+				for i in range(len(final)):
+					layer = pdk.Layer(
+		    			"HexagonLayer",
+		    			positions[positions[responses[i]]==1],
+			    		get_position=['longitude','latitude'],
+			    		auto_highlight=True,
+			    		elevation_scale=elevation_scale,
+			    		pickable=True,
+			    		elevation_range=[0, 2000],
+			    		extruded=True,
+			    		coverage=1,
+			    		radius=radius,
+			    		tooltip=True
+					)
+					if i%2==0:	
+						col1.subheader('Response: '+final[i])
+						col1.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/dark-v9',\
+						initial_view_state=view_state,layers=[layer],tooltip=True))
 					
-				bars=[pdk.Layer('ColumnLayer',data=a,get_position='centroid',get_elevation='+'.join(L[k:]),\
-					elevation_scale=500,pickable=True,auto_highlight=True,get_fill_color=colors[k],radius=5000) for k in range(len(L))]
-				regions_poly=[pdk.Layer("PolygonLayer",a,id="geojson",opacity=0.5,stroked=False,get_polygon="coordinates",filled=True,\
-    					extruded=True,wireframe=True,get_fill_color="fill_color",get_line_color=[0, 0, 0],pickable=True,)]
-				text=[pdk.Layer("TextLayer",data=a,get_position=['lat','long-0.15'],filled=False,billboard=False,get_line_color=[180, 180, 180],\
-				get_text="admin",get_size=24,get_color=[0,0,0],line_width_min_pixels=1,)]
+					else:
+						col2.subheader('Response: '+final[i])
+						col2.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/dark-v9',\
+						initial_view_state=view_state,layers=[layer],tooltip=True))
+				
+			elif len(final)>0:
+				positions=data[['longitude','latitude']+[selection]]
+				#st.write(positions)
+				#st.write(final)
+				for i in range(len(final)):
+					#st.write(positions[positions[selection]==final[i]])
+					layer = pdk.Layer(
+		    			"HexagonLayer",
+		    			positions[positions[selection]==final[i]],
+			    		get_position=['longitude','latitude'],
+			    		auto_highlight=True,
+			    		elevation_scale=elevation_scale,
+			    		pickable=True,
+			    		elevation_range=[0, 2000],
+			    		extruded=True,
+			    		coverage=1,
+			    		radius=radius,
+			    		tooltip=True
+					)
+					#st.write(i)
+					if i%2==0:	
+						col1.subheader('Response: '+final[i])
+						col1.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/dark-v9',\
+						initial_view_state=view_state,layers=[layer],tooltip=True))
 					
-				col1.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/light-v9',\
-				initial_view_state=pdk.ViewState(latitude=14.566,longitude=44.5,zoom=7,height=900,pitch=60),\
-				layers=bars+text+regions_poly
-				))
-				
-				
-				col2.subheader(toshow.iloc[i]['legendtitle'])
-				x=a['admin']
-				fig=go.Figure()
-				for i in range(len(L)):
-					fig.add_trace(go.Bar(x=x, y=a[L[i]], name=labels[i],marker_color='rgb('+colors[i][1:-1]+')'))	
-				
-				fig.update_layout(barmode='relative',yaxis={'title':'Persons'})
-				fig.update_layout(legend_title=None,legend=dict(orientation='h',
-      				  yanchor="bottom",
-      				  y=1.02,
-      				  xanchor="right",
-       			 x=1.01,font=dict(size=18),title=dict(font=dict(size=18))
-    				))
-				col2.plotly_chart(fig,use_container_width=True)
-				total=a[L[0]].copy()
-				for k in range(1,len(L)):
-					total+=a[L[k]]
-				
-				fig2 = go.Figure()
-				for i in range(len(L)):
-					fig2.add_trace(go.Bar(x=x, y=a[L[i]]/total*100, name=labels[i],marker_color='rgb('+colors[i][1:-1]+')'))	
-				fig2.update_layout(barmode='relative',yaxis={'title':'Pourcentage'})
-				fig2.update_layout(legend_title=None,legend=dict(orientation='h',
-      				  yanchor="bottom",
-      				  y=1.02,
-      				  xanchor="right",
-       			 x=1.01,font=dict(size=18),title=dict(font=dict(size=18))
-    				))
-				col2.plotly_chart(fig2,autosize=False,use_container_width=True,height=50)
-		
-				
+					else:
+						col2.subheader('Response: '+final[i])
+						col2.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/dark-v9',\
+						initial_view_state=view_state,layers=[layer],tooltip=True))
 			
-			elif toshow.iloc[i]['variable_x']!='region_origin':
-				
-				#st.write(df)
-				
-				col1,col2=st.columns([2,1])
+			
+			
 				
 				
 					
-				regions_poly=[pdk.Layer("PolygonLayer",a,id="geojson",opacity=0.5,stroked=False,get_polygon="coordinates",filled=True,\
-    					extruded=True,wireframe=True,get_fill_color="fill_color",get_line_color=[0, 0, 0],pickable=True,)]
-				text=[pdk.Layer("TextLayer",data=a,get_position=['lat','long'],filled=False,billboard=False,get_line_color=[180, 180, 180],\
-				get_text="admin",get_size=24,get_color=[0,0,0],line_width_min_pixels=1,)]
-					
-				col1.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/light-v9',\
-				initial_view_state=pdk.ViewState(latitude=14.566,longitude=44.5,zoom=7,height=900,pitch=60),\
-				layers=text+regions_poly
-				))
-				
-				fig = px.box(df, y='region', x='pay_water',points='all')
-				fig.update_layout(yaxis={'title':None},xaxis={'title':'Price of water (in $)'})
-				col2.plotly_chart(fig,use_container_width=True)
-				
-			else:
-				#st.write(df)
-				#st.write(regions)
-				regions['coordinates']=regions['coordinates'].apply(lambda x:eval(x))
-				regions['centroid']=regions['centroid'].apply(lambda x:eval(x))
-				regions['lat']=regions['centroid'].apply(lambda x:x[0])
-				regions['long']=regions['centroid'].apply(lambda x:x[1])
-				#st.write(regions)
-					
-				regions_poly=[pdk.Layer("PolygonLayer",regions,id="geojson",opacity=0.5,stroked=False,get_polygon="coordinates",filled=True,\
-    					extruded=True,wireframe=True,get_fill_color="fill_color",get_line_color=[0, 0, 0],pickable=True,)]
-				text=[pdk.Layer("TextLayer",data=regions,get_position=['lat','long'],filled=False,billboard=False,get_line_color=[180, 180, 180],\
-				get_text="admin",get_size=15,get_color=[0,0,0],line_width_min_pixels=1,)]
-					
-				st.pydeck_chart(pdk.Deck(map_style='mapbox://styles/mapbox/light-v9',\
-				initial_view_state=pdk.ViewState(latitude=14.566,longitude=46.5,zoom=6,height=400,pitch=40),\
-				layers=text+regions_poly
-				))
-				
-				fig = px.box(df, x='region_origin', y='CSI',points='all')
-				fig.update_layout(xaxis={'title':None},yaxis={'title':'CSI index'})
-				st.plotly_chart(fig,use_container_width=True,height=300)
-				
-		
-	
-	
 			
 	elif topic=='Display Sankey diagrams':
 	
